@@ -31,6 +31,7 @@
         </style>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
+        <script type="text/javascript" src="data\Server001Percentage_data.php"></script>
     </head>
     <body>
 
@@ -65,15 +66,28 @@
             </div>
         </div>
 
+    <center>
+        ____________________________________________________________________________________________
+        <h1>Percentage (in a month)</h1>
+        _____________________________________________________________________________________________
+    </center>
+
+        <div id="small-chart-container">
+                <canvas id="Server001Percentage"></canvas>
+        </div>
+
     <!-- Javascript sementara-->
     <!-- script untuk menampilkan graphs-->
 
     <script>
         $(document).ready(function (){
             ActiveServersBarChart();
+
             Server001StatusBarChart();
             Server002StatusBarChart();
             Server003StatusBarChart();
+
+            Server001Percentage();
 
         });
         function ActiveServersBarChart() {
@@ -217,6 +231,73 @@
                         borderWidth: 1
                     });
                 });
+            }
+        }
+
+        function Server001Percentage() {
+            {
+                $.post("data/Server001Percentage_data.php", function(data){
+                    console.log(data);
+
+                    var active = [];
+                    var inactive = [];
+
+                    for (var i in data) {
+                        active.push(data[i].ActiveCount);
+                        inactive.push(data[i].InactiveCount);
+                    }
+
+                    var chartdata = {
+                        labels: ["active","inactive"],
+                        datasets: [
+                            {
+                                label: 'Active percentage',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [active,inactive],
+                                 backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#Server001Percentage");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'doughnut',
+                        data: chartdata
+                    });
+                });
+
+
+                    /*console.log(activedata);
+                    console.log(inactivedata);
+                    
+                    var active = 
+                    var inactive = 
+
+                    var percentage = 0;
+
+                    percentage = (activedata / (activedata+inactivedata)) * 100;
+
+                    document.getElementById("Server001Percentage").innerHTML = percentage;*/
             }
         }
 
