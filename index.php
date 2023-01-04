@@ -39,7 +39,7 @@
 
     <center>
         ____________________________________________________________________________________________
-        <h1>Active Servers</h1>
+        <h1>Active Servers (one hour)</h1>
         _____________________________________________________________________________________________
     </center>
         <div id="chart-container">
@@ -48,7 +48,7 @@
 
     <center>
         ____________________________________________________________________________________________
-        <h1>Server statuses</h1>
+        <h1>Server statuses (one day)</h1>
         _____________________________________________________________________________________________
     </center>
 
@@ -144,7 +144,7 @@
                             {
                                 label: 'Database Oracle Production',
                                 backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(100, 129, 120)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: Status,
@@ -180,7 +180,7 @@
                             {
                                 label: 'Database Oracle Standby',
                                 backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(100, 129, 120)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: Status,
@@ -216,7 +216,7 @@
                             {
                                 label: 'Web server nol.simetris.rss',
                                 backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(100, 129, 120)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: Status,
