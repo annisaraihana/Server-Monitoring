@@ -13,6 +13,21 @@
                     width: 100%;
                     height: auto;
                 }
+                #small-chart-container {
+                    width: 50%;
+                    height: auto;
+                }
+                #small-chart-box {
+                    display: inline-flex;
+                    width: 100%;
+                    height: auto;
+                    padding: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    /*align-items: center;
+                    justify-content: center;*/
+                }
         </style>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
@@ -32,11 +47,22 @@
 
     <center>
         ____________________________________________________________________________________________
-        <h1>Database Oracle Production Server status</h1>
+        <h1>Server statuses</h1>
         _____________________________________________________________________________________________
     </center>
-        <div id="chart-container">
-            <canvas id="Server001Graph"></canvas>
+
+        <div id="small-chart-box">
+            <div id="small-chart-container">
+                <canvas id="Server001Graph"></canvas>
+            </div>
+
+            <div id="small-chart-container">
+                <canvas id="Server002Graph"></canvas>
+            </div>
+
+            <div id="small-chart-container">
+                <canvas id="Server003Graph"></canvas>
+            </div>
         </div>
 
     <!-- Javascript sementara-->
@@ -46,6 +72,8 @@
         $(document).ready(function (){
             ActiveServersBarChart();
             Server001StatusBarChart();
+            Server002StatusBarChart();
+            Server003StatusBarChart();
 
         });
         function ActiveServersBarChart() {
@@ -65,17 +93,11 @@
                         datasets: [
                             {
                                 label: 'Active Servers',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(103, 161, 118)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: ActiveServers,
-                                backgroundColor: [
-                                    
-                                ],
-                                borderColor: [
-                                    
-                                ],
                                 borderWidth: 1
                             }
                         ]
@@ -106,31 +128,98 @@
                         labels: Timestamp,
                         datasets: [
                             {
-                                label: 'Database Oracle Production Server status',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
+                                label: 'Database Oracle Production',
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(103, 161, 118)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: Status,
-                                backgroundColor: [
-                                    
-                                ],
-                                borderColor: [
-                                    
-                                ],
                                 borderWidth: 1
                             }
                         ]
                     };
                     var graphTarget = $("#Server001Graph");
                     var barGraph = new Chart(graphTarget, {
-                        type: 'bar',
+                        type: 'line',
                         data: chartdata,    
                         borderWidth: 1
                     });
                 });
             }
         }
+
+        function Server002StatusBarChart() {
+            {
+                $.post("data/Server002Status_data.php",
+                function (data)
+                {
+                    console.log(data);
+                    var Timestamp = [];
+                    var Status = [];
+                    for (var i in data) {
+                        Timestamp.push(data[i].Timestamp);
+                        Status.push(data[i].status);
+                    }
+                    var chartdata = {
+                        labels: Timestamp,
+                        datasets: [
+                            {
+                                label: 'Database Oracle Standby',
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(103, 161, 118)',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: Status,
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                    var graphTarget = $("#Server002Graph");
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'line',
+                        data: chartdata,    
+                        borderWidth: 1
+                    });
+                });
+            }
+        }
+
+        function Server003StatusBarChart() {
+            {
+                $.post("data/Server003Status_data.php",
+                function (data)
+                {
+                    console.log(data);
+                    var Timestamp = [];
+                    var Status = [];
+                    for (var i in data) {
+                        Timestamp.push(data[i].Timestamp);
+                        Status.push(data[i].status);
+                    }
+                    var chartdata = {
+                        labels: Timestamp,
+                        datasets: [
+                            {
+                                label: 'Web server nol.simetris.rss',
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(103, 161, 118)',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: Status,
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                    var graphTarget = $("#Server003Graph");
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'line',
+                        data: chartdata,    
+                        borderWidth: 1
+                    });
+                });
+            }
+        }
+
 
 
 
