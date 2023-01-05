@@ -76,12 +76,23 @@ include 'env.php';
 
     <center>
         ____________________________________________________________________________________________
-        <h1>Percentage (in a month)</h1>
+        <h1>Percentage (Current Month)</h1>
         _____________________________________________________________________________________________
     </center>
 
-        <div id="small-chart-container">
-                <canvas id="Server001Percentage"></canvas>
+        <div id="small-chart-box">
+            <div id="small-chart-container">
+                    <canvas id="Server001Percentage"></canvas>
+            </div>
+            <div id="small-chart-container">
+                    <canvas id="Server002Percentage"></canvas>
+            </div>
+            <div id="small-chart-container">
+                    <canvas id="Server003Percentage"></canvas>
+            </div>
+            <div id="small-chart-container">
+                    <canvas id="Server004Percentage"></canvas>
+            </div>
         </div>
 
     <!-- Javascript sementara-->
@@ -97,6 +108,9 @@ include 'env.php';
             Server004StatusBarChart();
 
             Server001Percentage();
+            Server002Percentage();
+            Server003Percentage();
+            Server004Percentage();
 
 
         });
@@ -334,7 +348,13 @@ include 'env.php';
 
                     var barGraph = new Chart(graphTarget, {
                         type: 'doughnut',
-                        data: chartdata
+                        data: chartdata,
+                        options: {
+                            title: {
+                            display: true,
+                            text: 'Database Oracle Production'
+                            }
+                        }
                     });
                 });
 
@@ -353,7 +373,189 @@ include 'env.php';
             }
         }
 
+        function Server002Percentage() {
+            {
+                $.post("data/Server002Percentage_data.php", function(data){
+                    console.log(data);
 
+                    var active = [];
+                    var inactive = [];
+
+                    for (var i in data) {
+                        active.push(data[i].ActiveCount);
+                        inactive.push(data[i].InactiveCount);
+                    }
+
+                    var chartdata = {
+                        labels: ["active","inactive"],
+                        datasets: [
+                            {
+                                label: 'Active percentage',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [active,inactive],
+                                 backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#Server002Percentage");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'doughnut',
+                        data: chartdata,
+                        options: {
+                            title: {
+                            display: true,
+                            text: 'Database Oracle Standby'
+                            }
+                        }
+                    });
+                });
+
+            }
+        }
+
+
+        function Server003Percentage() {
+            {
+                $.post("data/Server003Percentage_data.php", function(data){
+                    console.log(data);
+
+                    var active = [];
+                    var inactive = [];
+
+                    for (var i in data) {
+                        active.push(data[i].ActiveCount);
+                        inactive.push(data[i].InactiveCount);
+                    }
+
+                    var chartdata = {
+                        labels: ["active","inactive"],
+                        datasets: [
+                            {
+                                label: 'Active percentage',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [active,inactive],
+                                 backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#Server003Percentage");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'doughnut',
+                        data: chartdata,
+                        options: {
+                            title: {
+                            display: true,
+                            text: 'Web server nol.simetris.rss'
+                            }
+                        }
+                    });
+                });
+
+            }
+        }
+
+        function Server004Percentage() {
+            {
+                $.post("data/Server004Percentage_data.php", function(data){
+                    console.log(data);
+
+                    var active = [];
+                    var inactive = [];
+
+                    for (var i in data) {
+                        active.push(data[i].ActiveCount);
+                        inactive.push(data[i].InactiveCount);
+                    }
+
+                    var chartdata = {
+                        labels: ["active","inactive"],
+                        datasets: [
+                            {
+                                label: 'Active percentage',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [active,inactive],
+                                 backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    'rgba(255, 206, 86, 0.2)',
+                                    'rgba(75, 192, 192, 0.2)',
+                                    'rgba(153, 102, 255, 0.2)',
+                                    'rgba(255, 159, 64, 0.2)'
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                    'rgba(255, 206, 86, 1)',
+                                    'rgba(75, 192, 192, 1)',
+                                    'rgba(153, 102, 255, 1)',
+                                    'rgba(255, 159, 64, 1)'
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+
+                    var graphTarget = $("#Server004Percentage");
+
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'doughnut',
+                        data: chartdata,
+                        options: {
+                            title: {
+                            display: true,
+                            text: 'Web server satu.simetris.rss'
+                            }
+                        }
+                    });
+                });
+
+            }
+        }
 
 
     </script>
