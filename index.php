@@ -36,6 +36,7 @@ include 'env.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <script type="text/javascript" src="js/DisplayStatusChart.js"></script>
 
     </head>
     <body>
@@ -112,9 +113,11 @@ include 'env.php';
             Server002Percentage();
             Server003Percentage();
             Server004Percentage();
+            ServerStatusBarChart();
 
 
         });
+
         function ActiveServersBarChart() {
             {
                 $.post("data/ActiveServers_data.php",
@@ -151,9 +154,13 @@ include 'env.php';
             }
         }
 
-        /*for (var i in data){
 
-        }*/
+        function ServerStatusBarChart() {
+            {
+                
+            }
+        }
+
 
         function Server001StatusBarChart() {
             {
