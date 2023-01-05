@@ -35,7 +35,8 @@ include 'env.php';
         </style>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="data\Server001Percentage_data.php"></script>
+        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+
     </head>
     <body>
 
@@ -426,7 +427,22 @@ include 'env.php';
                             title: {
                             display: true,
                             text: 'Database Oracle Standby'
+                            },
+                            plugins: {
+                                doughnutlabel: {
+                                    labels: [
+                                    {
+                                        text: 'The title',
+                                        font: {
+                                        size: '60'
+                                        }
+                                    }
+                                    
+                                    ]
+                                }
+
                             }
+                            
                         }
                     });
                 });
