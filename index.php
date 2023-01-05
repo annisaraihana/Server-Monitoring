@@ -1,3 +1,7 @@
+<?php include 'autoload.php';
+include 'env.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,6 +68,10 @@
             <div id="small-chart-container">
                 <canvas id="Server003Graph"></canvas>
             </div>
+
+            <div id="small-chart-container">
+                <canvas id="Server004Graph"></canvas>
+            </div>
         </div>
 
     <center>
@@ -86,8 +94,10 @@
             Server001StatusBarChart();
             Server002StatusBarChart();
             Server003StatusBarChart();
+            Server004StatusBarChart();
 
             Server001Percentage();
+
 
         });
         function ActiveServersBarChart() {
@@ -125,6 +135,10 @@
                 });
             }
         }
+
+        /*for (var i in data){
+
+        }*/
 
         function Server001StatusBarChart() {
             {
@@ -233,6 +247,44 @@
                 });
             }
         }
+
+        function Server004StatusBarChart() {
+            {
+                $.post("data/Server004Status_data.php",
+                function (data)
+                {
+                    console.log(data);
+                    var Timestamp = [];
+                    var Status = [];
+                    for (var i in data) {
+                        Timestamp.push(data[i].Timestamp);
+                        Status.push(data[i].status);
+                    }
+                    var chartdata = {
+                        labels: Timestamp,
+                        datasets: [
+                            {
+                                label: 'Web server satu.simetris.rss',
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(100, 129, 120)',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: Status,
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                    var graphTarget = $("#Server004Graph");
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'line',
+                        data: chartdata,    
+                        borderWidth: 1
+                    });
+                });
+            }
+        }
+
+        
 
         function Server001Percentage() {
             {
