@@ -36,7 +36,7 @@ include 'env.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <script type="text/javascript" src="js/DisplayStatusChart.js"></script>
+        
 
     </head>
     <body>
@@ -74,6 +74,90 @@ include 'env.php';
             <div id="small-chart-container">
                 <canvas id="Server004Graph"></canvas>
             </div>
+            <div id="small-chart-container">
+                <canvas id="Server005Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server006Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server007Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server008Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server009Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server010Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server011Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server012Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server013Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server014Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server015Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server016Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server017Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server018Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server019Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server020Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server021Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server022Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server023Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server024Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server025Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server026Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server027Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server028Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server029Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server030Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server031Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server032Graph"></canvas>
+            </div>
         </div>
 
     <center>
@@ -95,11 +179,13 @@ include 'env.php';
             <div id="small-chart-container">
                     <canvas id="Server004Percentage"></canvas>
             </div>
+            <div id="small-chart-container">
+                    <canvas id="Server005Percentage"></canvas>
+            </div>
         </div>
 
     <!-- Javascript sementara-->
     <!-- script untuk menampilkan graphs-->
-
     <script>
         $(document).ready(function (){
             ActiveServersBarChart();
@@ -108,12 +194,39 @@ include 'env.php';
             Server002StatusBarChart();
             Server003StatusBarChart();
             Server004StatusBarChart();
+            Server005StatusBarChart();
+            Server006StatusBarChart();
+            Server007StatusBarChart();
+            Server008StatusBarChart();
+            Server009StatusBarChart();
+            Server010StatusBarChart();
+            Server011StatusBarChart();
+            Server012StatusBarChart();
+            Server013StatusBarChart();
+            Server014StatusBarChart();
+            Server015StatusBarChart();
+            Server016StatusBarChart();
+            Server017StatusBarChart();
+            Server018StatusBarChart();
+            Server019StatusBarChart();
+            Server020StatusBarChart();
+            Server021StatusBarChart();
+            Server022StatusBarChart();
+            Server023StatusBarChart();
+            Server024StatusBarChart();
+            Server025StatusBarChart();
+            Server026StatusBarChart();
+            Server027StatusBarChart();
+            Server028StatusBarChart();
+            Server029StatusBarChart();
+            Server030StatusBarChart();
+            Server031StatusBarChart();
+            Server032StatusBarChart();
 
             Server001Percentage();
             Server002Percentage();
             Server003Percentage();
             Server004Percentage();
-            ServerStatusBarChart();
 
 
         });
@@ -154,159 +267,7 @@ include 'env.php';
             }
         }
 
-
-        function ServerStatusBarChart() {
-            {
-                
-            }
-        }
-
-
-        function Server001StatusBarChart() {
-            {
-                $.post("data/Server001Status_data.php",
-                function (data)
-                {
-                    console.log(data);
-                    var Timestamp = [];
-                    var Status = [];
-                    for (var i in data) {
-                        Timestamp.push(data[i].Timestamp);
-                        Status.push(data[i].status);
-                    }
-                    var chartdata = {
-                        labels: Timestamp,
-                        datasets: [
-                            {
-                                label: 'Database Oracle Production',
-                                backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(100, 129, 120)',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-                                data: Status,
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                    var graphTarget = $("#Server001Graph");
-                    var barGraph = new Chart(graphTarget, {
-                        type: 'line',
-                        data: chartdata,    
-                        borderWidth: 1
-                    });
-                });
-            }
-        }
-
-        function Server002StatusBarChart() {
-            {
-                $.post("data/Server002Status_data.php",
-                function (data)
-                {
-                    console.log(data);
-                    var Timestamp = [];
-                    var Status = [];
-                    for (var i in data) {
-                        Timestamp.push(data[i].Timestamp);
-                        Status.push(data[i].status);
-                    }
-                    var chartdata = {
-                        labels: Timestamp,
-                        datasets: [
-                            {
-                                label: 'Database Oracle Standby',
-                                backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(100, 129, 120)',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-                                data: Status,
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                    var graphTarget = $("#Server002Graph");
-                    var barGraph = new Chart(graphTarget, {
-                        type: 'line',
-                        data: chartdata,    
-                        borderWidth: 1
-                    });
-                });
-            }
-        }
-
-        function Server003StatusBarChart() {
-            {
-                $.post("data/Server003Status_data.php",
-                function (data)
-                {
-                    console.log(data);
-                    var Timestamp = [];
-                    var Status = [];
-                    for (var i in data) {
-                        Timestamp.push(data[i].Timestamp);
-                        Status.push(data[i].status);
-                    }
-                    var chartdata = {
-                        labels: Timestamp,
-                        datasets: [
-                            {
-                                label: 'Web server nol.simetris.rss',
-                                backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(100, 129, 120)',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-                                data: Status,
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                    var graphTarget = $("#Server003Graph");
-                    var barGraph = new Chart(graphTarget, {
-                        type: 'line',
-                        data: chartdata,    
-                        borderWidth: 1
-                    });
-                });
-            }
-        }
-
-        function Server004StatusBarChart() {
-            {
-                $.post("data/Server004Status_data.php",
-                function (data)
-                {
-                    console.log(data);
-                    var Timestamp = [];
-                    var Status = [];
-                    for (var i in data) {
-                        Timestamp.push(data[i].Timestamp);
-                        Status.push(data[i].status);
-                    }
-                    var chartdata = {
-                        labels: Timestamp,
-                        datasets: [
-                            {
-                                label: 'Web server satu.simetris.rss',
-                                backgroundColor: 'rgb(103, 161, 118)',
-                                borderColor: 'rgb(100, 129, 120)',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-                                data: Status,
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                    var graphTarget = $("#Server004Graph");
-                    var barGraph = new Chart(graphTarget, {
-                        type: 'line',
-                        data: chartdata,    
-                        borderWidth: 1
-                    });
-                });
-            }
-        }
-
-        
+     
 
         function Server001Percentage() {
             {
@@ -583,6 +544,7 @@ include 'env.php';
 
     </script>
 
+    <script type="text/javascript" src="js/DisplayStatusChart.js"></script>           
 
     </body>
     </html>
