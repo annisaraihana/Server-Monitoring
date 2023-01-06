@@ -38,57 +38,127 @@
     <body>
     
     <div>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
-        <canvas class="ServerStatus"></canvas>
+        
     </div>
-
+        <div id="small-chart-container">
+            <canvas id="ServerGraph1"></canvas>
+        </div>
     <script>
+
+    var ServiceId = [];
+    var ServiceName = [];
+    var ServiceDesc = [];
 
     $.post("data/GetServiceNames_data.php", function(data)
     {
         console.log(data);
-        var ServiceId = [];
-        var ServiceName = [];
-        var ServiceDesc = [];
+        
         for (var i in data) {
             ServiceId.push(data[i].ServiceId);
             ServiceName.push(data[i].ServiceName);
             ServiceDesc.push(data[i].ServiceDesc);
         }
 
+        console.log(ServiceId);
+        console.log(ServiceName);
         console.log(ServiceDesc);
+        /*
+        for (var i in ServiceId){
+            element = document.createElement('canvas');
+            element.setAttribute("id", "ServerGraph" + ServiceId[i]);
+        }
+        */
 
+        for (var i in ServiceId){
+
+            $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i] }, 
+                function (data)
+                {
+                    console.log(data);
+                    var Timestamp = [];
+                    var Status = [];
+                    for (var i in data) {
+                        Timestamp.push(data[i].Timestamp);
+                        Status.push(data[i].status);
+                    }
+                    var chartdata = {
+                        labels: Timestamp,
+                        datasets: [
+                            {
+                                label: 'ServiceDesc[i]', 
+                                backgroundColor: 'rgb(103, 161, 118)',
+                                borderColor: 'rgb(100, 129, 120)',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: Status,
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                    var graphTarget = document.getElementById('ServerGraph1').insertAdjacentHTML(); //UBAH UBAH DISINI IDKKKK
+                    console.log(graphTarget);
+                    var barGraph = new Chart(graphTarget, {
+                        type: 'line',
+                        data: chartdata,    
+                        borderWidth: 1
+                    });
+                });
+
+        }
+
+        /*
+        for (var i in data) {
+            ServiceId.push(data[i].ServiceId);
+            ServiceName.push(data[i].ServiceName);
+            ServiceDesc.push(data[i].ServiceDesc);
+        }
+        */
+
+        /*
+        for (var i in data){
+
+            ServiceId.push(data[i].ServiceId);
+            ServiceName.push(data[i].ServiceName);
+            ServiceDesc.push(data[i].ServiceDesc);
+
+            $("canvas").each(function(ServiceId,ServiceDesc){
+
+            $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId }, 
+                    function (data)
+                    {
+                        console.log(data);
+                        var Timestamp = [];
+                        var Status = [];
+                        for (var i in data) {
+                            Timestamp.push(data[i].Timestamp);
+                            Status.push(data[i].status);
+                        }
+                        var chartdata = {
+                            labels: Timestamp,
+                            datasets: [
+                                {
+                                    label: ServiceDesc, 
+                                    backgroundColor: 'rgb(103, 161, 118)',
+                                    borderColor: 'rgb(100, 129, 120)',
+                                    hoverBackgroundColor: '#CCCCCC',
+                                    hoverBorderColor: '#666666',
+                                    data: Status,
+                                    borderWidth: 1
+                                }
+                            ]
+                        };
+                        var graphTarget = $(".ServerStatus"); 
+                        var barGraph = new Chart(graphTarget, {
+                            type: 'line',
+                            data: chartdata,    
+                            borderWidth: 1
+                        });
+                    });
+
+            });  
+            
+        }
+/*
         $(".ServerStatus").each(function(ServiceId,ServiceDesc){
 
             $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId }, 
@@ -124,6 +194,7 @@
                     });
 
             });  
+        */
     });
 
 
