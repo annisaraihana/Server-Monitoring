@@ -18,7 +18,7 @@ include 'env.php';
                     height: auto;
                 }
                 #small-chart-container {
-                    width: 50%;
+                    width: 30%;
                     height: auto;
                 }
                 #small-chart-box {
