@@ -15,8 +15,6 @@
     └── htdocs/
         └── Server-Monitoring/
 ```
-- Run XAMPP Control Panel, start Apache dan MySQL.
-- Buka browser pilihan dan buka link http://localhost/Server-Monitoring/
 
 ### Setting Up Project
 
@@ -38,6 +36,8 @@
   }
   ```
 - Ganti value di dalam tanda petik sesuai konfigurasi MySQL anda.
+- Run XAMPP Control Panel, start Apache dan MySQL.
+- Buka browser pilihan dan buka link http://localhost/Server-Monitoring/
 
 
 ### Folder Structure
