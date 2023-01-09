@@ -36,7 +36,6 @@
   foreach ($variables as $key => $value) {
       putenv("$key=$value");
   }
- ?>
   ```
 -Ganti value di dalam tanda petik sesuai konfigurasi MySQL anda.
 
