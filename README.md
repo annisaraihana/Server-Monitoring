@@ -37,7 +37,7 @@
       putenv("$key=$value");
   }
   ```
--Ganti value di dalam tanda petik sesuai konfigurasi MySQL anda.
+- Ganti value di dalam tanda petik sesuai konfigurasi MySQL anda.
 
 
 ### Folder Structure
