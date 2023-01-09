@@ -37,12 +37,35 @@
     </head>
     <body>
     
-    <div>
+    <div id="small-chart-box">
         
-    </div>
         <div id="small-chart-container">
             <canvas id="ServerGraph001"></canvas>
         </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph002"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph003"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph004"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph005"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph006"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph007"></canvas>
+        </div>
+        <div id="small-chart-container">
+            <canvas id="ServerGraph008"></canvas>
+        </div>
+
+    </div>
+
     <script>
 
     var ServiceId = [];
@@ -54,15 +77,13 @@
     {
         console.log(data);
         
-        for (var i in data) {
+        for (let i in data) {
             ServiceId.push(data[i].ServiceId);
             ServiceName.push(data[i].ServiceName);
             ServiceDesc.push(data[i].ServiceDesc);
         }
-        for (var i = 0; i < 32; i++) 
-        { console.log(ServiceId[i]); }
 
-        for (var i = 0; i < ServiceId.length; i++){
+        for (let i = 0; i < ServiceId.length; i++){
 
             $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i] }, 
                 function (data)
@@ -70,7 +91,7 @@
                     console.log(data);
                     var Timestamp = [];
                     var Status = [];
-                    for (var i in data) {
+                    for (let i in data) {
                         Timestamp.push(data[i].Timestamp);
                         Status.push(data[i].status);
                     }
