@@ -37,34 +37,107 @@
     </head>
     <body>
     
-    <div id="small-chart-box">
-        
-        <div id="small-chart-container">
-            <canvas id="ServerGraph001"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph002"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph003"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph004"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph005"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph006"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph007"></canvas>
-        </div>
-        <div id="small-chart-container">
-            <canvas id="ServerGraph008"></canvas>
-        </div>
+        <div id="small-chart-box">
+            <div id="small-chart-container">
+                <canvas id="Server001Graph"></canvas>
+            </div>
 
-    </div>
+            <div id="small-chart-container">
+                <canvas id="Server002Graph"></canvas>
+            </div>
+
+            <div id="small-chart-container">
+                <canvas id="Server003Graph"></canvas>
+            </div>
+
+            <div id="small-chart-container">
+                <canvas id="Server004Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server005Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server006Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server007Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server008Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server009Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server010Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server011Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server012Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server013Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server014Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server015Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server016Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server017Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server018Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server019Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server020Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server021Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server022Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server023Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server024Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server025Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server026Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server027Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server028Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server029Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server030Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server031Graph"></canvas>
+            </div>
+            <div id="small-chart-container">
+                <canvas id="Server032Graph"></canvas>
+            </div>
+        </div>
 
     <script>
 
@@ -109,7 +182,7 @@
                             }
                         ]
                     };
-                    var graphTarget = $("#ServerGraph"+ServiceId[i]);
+                    var graphTarget = $("#Server"+ServiceId[i]+"Graph");
                     console.log(graphTarget);
                     var barGraph = new Chart(graphTarget, {
                         type: 'line',
