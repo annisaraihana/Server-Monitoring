@@ -7,7 +7,7 @@
 
 ### Prerequisites
 
-- [Download](https://www.apachefriends.org/index.html) dan install **XAMPP** versi `8.2.0` atau lebih. Termasuk segala jenis software SQL.
+- [Download](https://www.apachefriends.org/index.html) dan install **XAMPP** versi `8.2.0` atau lebih. Termasuk segala jenis software MySQL yang telah terbundle.
 - Buka foler penginstalan xampp dan clone project ini kedalam folder htdocs.
 
 ```
@@ -46,5 +46,5 @@
 - root                 # berisi index.php dan pages lainnya
   - css                # berisi file-file .css
   - data               # berisi file-file .php yang mengambil data dari database.
-  - js                 # berisi libraries dan file .js yang menampilkan data di pages. 
+  - js                 # berisi libraries dan file .js yang menampilkan data di halaman. 
 ```
