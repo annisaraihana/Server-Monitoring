@@ -10,6 +10,7 @@ include 'env.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         
 
     </head>
@@ -26,15 +27,15 @@ include 'env.php';
             <canvas id="ActiveServersGraph"></canvas>
         </div>
 
-        <div id="buttons">
+        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
             <a href="Server_Statuses.php" class="button">Server Statuses</a>
-        </div>
-        <div id="buttons">
+        </button>
+        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
             <a href="Monthly_Performance.php" class="button">Monthly Performance</a>
-        </div>
-        <div id="buttons">
+        </button>
+        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
             <a href="Yearly_Performance.php" class="button">Yearly Performance</a>
-        </div>
+        </button>
 
 
 
