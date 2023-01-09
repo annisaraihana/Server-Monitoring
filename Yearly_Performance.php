@@ -2,22 +2,24 @@
 <html>
     <head>
         <title>Yearly Performance</title>
-        <link rel="stylesheet" href="css/style.css">
+        <!--link rel="stylesheet" href="css/style.css"-->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         
 
     </head>
     <body>
     
     <center>
-        ____________________________________________________________________________________________
-        <h1>Percentage (YEAR 2022)</h1>
-        _____________________________________________________________________________________________
+        
+        <h1 class="font-sans text-2xl font-bold m-4 mb-6">
+            Percentage (YEAR 2022)</h1>
+        
     </center>
     
-    <div id="small-chart-box">
+    <div class="grid grid-cols-4 gap-4 mx-4" id="small-chart-box">
             <div id="small-chart-container">
                     <canvas id="Server001Percentage"></canvas>
             </div>

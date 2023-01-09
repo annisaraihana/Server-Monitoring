@@ -19,9 +19,10 @@ include 'env.php';
     <!-- HTML body-->
 
     <center>
-        ____________________________________________________________________________________________
-        <h1>Active Servers (last hour)</h1>
-        _____________________________________________________________________________________________
+        
+        <h1 class="font-sans text-2xl font-bold m-4 mb-6">
+            Active Servers (last hour)</h1>
+        
     </center>
         <div id="chart-container">
             <canvas id="ActiveServersGraph"></canvas>
@@ -29,17 +30,17 @@ include 'env.php';
 
         <div class="grid grid-cols-3 gap-4 mx-4">
 
-            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
-                <a href="Server_Statuses.php" class="button">Server Statuses</a>
+            <button id="ServerStatuses" class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+                Server Statuses
             </button>
-            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black visited:bg-black">
-                <a href="Monthly_Performance.php" class="button">Monthly Performance</a>
+            <button id="MonthlyPerformance" class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black visited:bg-black">
+                Monthly Performance
             </button>
-            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
-                <a href="Yearly_Performance.php" class="button">Yearly Performance</a>
+            <button id="YearlyPerformance"class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+                Yearly Performance
             </button>
 
-            <object class="w-screen h-screen"data="Monthly_Performance.php" type="text/html">
+            <object id="GraphsContainer" class="w-screen h-screen"data="Monthly_Performance.php" type="text/html">
                 Alternative Content
             </object>
         </div>
@@ -53,6 +54,19 @@ include 'env.php';
         $(document).ready(function (){
             ActiveServersBarChart();
         });
+
+        document.getElementById('ServerStatuses').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Server_Statuses.php')
+        };
+        document.getElementById('MonthlyPerformance').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Monthly_Performance.php')
+        };
+        document.getElementById('YearlyPerformance').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Yearly_Performance.php')
+        };
 
     </script>
 
