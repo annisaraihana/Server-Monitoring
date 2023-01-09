@@ -8,7 +8,7 @@
 ### Prerequisites
 
 - [Download](https://www.apachefriends.org/index.html) dan install **XAMPP** versi `8.2.0` atau lebih. Termasuk segala jenis software MySQL yang telah terbundle.
-- Buka foler penginstalan xampp dan clone project ini kedalam folder htdocs.
+- Buka folder penginstalan xampp dan clone project ini kedalam folder htdocs.
 
 ```
 └── xampp/
