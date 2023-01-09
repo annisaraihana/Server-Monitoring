@@ -1,34 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Testing</title>
-        <!-- CSS sementara-->
-        <style type="text/css">
-            BODY {
-                    width:70%;
-                    padding-left: 12%;
-                }
-                
-                #chart-container {
-                    width: 100%;
-                    height: auto;
-                }
-                #small-chart-container {
-                    width: 30%;
-                    height: auto;
-                }
-                #small-chart-box {
-                    display: inline-flex;
-                    width: 100%;
-                    height: auto;
-                    padding: 10px;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    /*align-items: center;
-                    justify-content: center;*/
-                }
-        </style>
+        <title>Monthly Performance</title>
+        <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
@@ -142,8 +116,18 @@
             </div>
         </div>
 
-    <script>
+        <script>
 
+        $(document).ready(function (){
+            ServerPercentageCurrentMonth();
+        });
+
+        </script>
+         <script type="text/javascript" src="js\DisplayPercentagesMonth.js" charset="utf-8"></script>
+   
+
+    <script>
+/*
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
@@ -232,6 +216,6 @@
 
     });
 
-
+*/
     </script>   
     </body>
