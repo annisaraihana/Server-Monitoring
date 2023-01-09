@@ -24,7 +24,7 @@ include 'env.php';
             Active Servers (last hour)</h1>
         
     </center>
-        <div id="chart-container">
+        <div id="chart-container" class="w-3/6 container mx-auto">
             <canvas id="ActiveServersGraph"></canvas>
         </div>
 
