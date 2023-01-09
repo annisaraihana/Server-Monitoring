@@ -46,5 +46,5 @@
 - root                 # berisi index.php dan pages lainnya
   - css                # berisi file-file .css
   - data               # berisi file-file .php yang mengambil data dari database.
-  - js                 # berisi file .js yang menampilkan data di pages. 
+  - js                 # berisi libraries dan file .js yang menampilkan data di pages. 
 ```
