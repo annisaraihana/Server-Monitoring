@@ -6,7 +6,7 @@ include 'env.php';
 <html>
     <head>
         <title>Servers Monitoring Dashboard</title>
-        <link rel="stylesheet" href="css/style.css">
+        <!--link rel="stylesheet" href="css/style.css"-->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
@@ -27,15 +27,23 @@ include 'env.php';
             <canvas id="ActiveServersGraph"></canvas>
         </div>
 
-        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
-            <a href="Server_Statuses.php" class="button">Server Statuses</a>
-        </button>
-        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
-            <a href="Monthly_Performance.php" class="button">Monthly Performance</a>
-        </button>
-        <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded">
-            <a href="Yearly_Performance.php" class="button">Yearly Performance</a>
-        </button>
+        <div class="grid grid-cols-3 gap-4 mx-4">
+
+            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+                <a href="Server_Statuses.php" class="button">Server Statuses</a>
+            </button>
+            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black visited:bg-black">
+                <a href="Monthly_Performance.php" class="button">Monthly Performance</a>
+            </button>
+            <button class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+                <a href="Yearly_Performance.php" class="button">Yearly Performance</a>
+            </button>
+
+            <object class="w-screen h-screen"data="Monthly_Performance.php" type="text/html">
+                Alternative Content
+            </object>
+        </div>
+
 
 
 
