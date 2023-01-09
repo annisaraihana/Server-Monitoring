@@ -1,34 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Percentages</title>
-        <!-- CSS sementara-->
-        <style type="text/css">
-            BODY {
-                    width:70%;
-                    padding-left: 12%;
-                }
-                
-                #chart-container {
-                    width: 100%;
-                    height: auto;
-                }
-                #small-chart-container {
-                    width: 30%;
-                    height: auto;
-                }
-                #small-chart-box {
-                    display: inline-flex;
-                    width: 100%;
-                    height: auto;
-                    padding: 10px;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    /*align-items: center;
-                    justify-content: center;*/
-                }
-        </style>
+        <title>Yearly Performance</title>
+        <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
@@ -36,13 +10,14 @@
 
     </head>
     <body>
+    
     <center>
         ____________________________________________________________________________________________
-        <h1>Percentage (Current Month)</h1>
+        <h1>Percentage (YEAR 2022)</h1>
         _____________________________________________________________________________________________
     </center>
-
-        <div id="small-chart-box">
+    
+    <div id="small-chart-box">
             <div id="small-chart-container">
                     <canvas id="Server001Percentage"></canvas>
             </div>
@@ -140,45 +115,107 @@
                 <canvas id="Server032Percentage"></canvas>
             </div>
         </div>
+
         <script>
+
         $(document).ready(function (){
-           
-
-            Server001Percentage();
-            Server002Percentage();
-            Server003Percentage();
-            Server004Percentage();
-            Server005Percentage();
-            Server006Percentage();
-            Server007Percentage();
-            Server008Percentage();
-            Server009Percentage();
-            Server010Percentage();
-            Server011Percentage();
-            Server012Percentage();
-            Server013Percentage();
-            Server014Percentage();
-            Server015Percentage();
-            Server016Percentage();
-            Server017Percentage();
-            Server018Percentage();
-            Server019Percentage();
-            Server020Percentage();
-            Server021Percentage();
-            Server022Percentage();
-            Server023Percentage();
-            Server024Percentage();
-            Server025Percentage();
-            Server026Percentage();
-            Server027Percentage();
-            Server028Percentage();
-            Server029Percentage();
-            Server030Percentage();
-            Server031Percentage();
-            Server032Percentage();
-
-
+            ServerPercentageCurrentYear();
         });
+
+        </script>
+        <script type="text/javascript" src="js\DisplayPercentagesYear.js" charset="utf-8"></script>
+
+
+    <script>
+/*
+    var ServiceId = [];
+    var ServiceName = [];
+    var ServiceDesc = [];
+    
+
+    $.post("data/GetServiceNames_data.php", function(data)
+    {
+        console.log(data);
+        
+        for (let i in data) {
+            ServiceId.push(data[i].ServiceId);
+            ServiceName.push(data[i].ServiceName);
+            ServiceDesc.push(data[i].ServiceDesc);
+        }
+
+        for (let i = 0; i < ServiceId.length; i++){
+
+            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, 
+                function (data)
+                {
+                    console.log(data);
+
+                    var active = [];
+                    var inactive = [];
+
+                    for (let i in data) {
+                        active.push(data[i].ActiveCount);
+                        inactive.push(data[i].InactiveCount);
+                    }
+
+                    var chartdata = {
+                        labels: ["active","inactive"],
+                        datasets: [
+                            {
+                                label: 'Active percentage',
+                                backgroundColor: '#49e2ff',
+                                borderColor: '#46d5f1',
+                                hoverBackgroundColor: '#CCCCCC',
+                                hoverBorderColor: '#666666',
+                                data: [active,inactive],
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)',
+                                    'rgba(54, 162, 235, 0.2)',
+                                    
+                                ],
+                                borderColor: [
+                                    'rgba(255,99,132,1)',
+                                    'rgba(54, 162, 235, 1)',
+                                
+                                ],
+                                borderWidth: 1
+                            }
+                        ]
+                    };
+                    
+                    var graphTarget = $("#Server"+ServiceId[i]+"Percentage");
+                    console.log(graphTarget);
+                    var barGraph = new Chart(graphTarget, {
+                    type: 'doughnut',
+                    data: chartdata,
+                    options: {
+                        cutoutPercentage: 80,
+                        title: {
+                        display: true,
+                        text: ServiceDesc[i]
+                        },
+                        plugins: {
+                            doughnutlabel: {
+                                labels: [
+                                {
+                                    text: (parseInt(active)*100/(parseInt(active)+parseInt(inactive))).toFixed(3)+'%',
+                                    font: {
+                                    size: '20'
+                                    }
+                                }
+                                
+                                ]
+                            }
+
+                        }
+                    }
+                });
+                });
+
+        }
+
+    });
+*/
+
     </script>   
-    <script type="text/javascript" src="js/DisplayPercentagesMonth.js"></script> 
     </body>

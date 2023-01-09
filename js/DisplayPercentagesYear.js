@@ -1,4 +1,5 @@
-function ServerPercentageCurrentMonth() {
+function ServerPercentageCurrentYear() {
+    
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
@@ -16,7 +17,7 @@ function ServerPercentageCurrentMonth() {
 
         for (let i = 0; i < ServiceId.length; i++){
 
-            $.post("data/ServerPercentage_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, 
                 function (data)
                 {
                     console.log(data);
@@ -86,6 +87,5 @@ function ServerPercentageCurrentMonth() {
         }
 
     });
-
 
 }

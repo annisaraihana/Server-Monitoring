@@ -1,0 +1,25 @@
+
+BODY {
+    width:70%;
+    padding-left: 12%;
+}
+
+#chart-container {
+    width: 100%;
+    height: auto;
+}
+#small-chart-container {
+    width: 30%;
+    height: auto;
+}
+#small-chart-box {
+    display: inline-flex;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*align-items: center;
+    justify-content: center;*/
+}
