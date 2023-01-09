@@ -39,7 +39,7 @@
     
     <center>
         ____________________________________________________________________________________________
-        <h1>Percentage (JANUARY 2022)</h1>
+        <h1>Percentage (YEAR 2022)</h1>
         _____________________________________________________________________________________________
     </center>
     
@@ -161,7 +161,7 @@
 
         for (let i = 0; i < ServiceId.length; i++){
 
-            $.post("data/ServerPercentage_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, 
                 function (data)
                 {
                     console.log(data);
