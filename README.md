@@ -5,6 +5,8 @@
 
 ## Development Setup
 
+Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup environment development-nya:
+
 ### Prerequisites
 
 - [Download](https://www.apachefriends.org/index.html) dan install **XAMPP** versi `8.2.0` atau lebih. Termasuk segala jenis software MySQL yang telah terbundle.
