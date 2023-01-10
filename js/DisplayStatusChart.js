@@ -37,7 +37,10 @@ function ServerStatusesLineCharts() {
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
                                 data: Status,
-                                borderWidth: 1
+                                borderWidth: 1,
+                                pointRadius: 1,
+                                pointBackgroundColor: 'rgb(0, 0, 0)',
+                                pointBorderColor: 'rgb(0, 0, 0)'
                             }
                         ]
                     };

@@ -17,35 +17,46 @@ include 'env.php';
     <body>
 
     <!-- HTML body-->
+        <div>
+            <div class="my-8 rounded p-6 bg-gray-400">
+                <div class="bg-white rounded w-3/6 m-auto">
+                    <div class="m-auto text-white bg-blue-700 rounded">
+                        <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
+                    </div>
 
-    <center>
-        
-        <h1 class="font-sans text-2xl font-bold m-4 mb-6">
-            Active Servers (last hour)</h1>
-        
-    </center>
-        <div id="chart-container" class="w-3/6 container mx-auto my-16">
-            <canvas id="ActiveServersGraph"></canvas>
+                    
+                    <p class="font-sans text-2xl font-bold m-4 mb-6 text-center">
+                        Jumlah server yang aktif saat ini (selama 1 jam kebelakang):
+                    </p>
+                
+
+                    <div id="chart-container" class="container mx-auto my-16 pr-10">
+                        <canvas id="ActiveServersGraph"></canvas>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div id="options" class="grid grid-cols-3 gap-4 mx-4">
+
+                <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Server Statuses
+                </button>
+                <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Monthly Performance
+                </button>
+                <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Yearly Performance
+                </button>
+
+                <object id="GraphsContainer" class="w-full h-screen col-span-3" data="Monthly_Performance.php" type="text/html">
+                    Alternative Content
+                </object>
+            </div>
+
         </div>
-
-        <div id="options" class="grid grid-cols-3 gap-4 mx-4">
-
-            <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
-                Server Statuses
-            </button>
-            <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
-                Monthly Performance
-            </button>
-            <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
-                Yearly Performance
-            </button>
-
-            <object id="GraphsContainer" class="w-full h-screen col-span-3" data="Monthly_Performance.php" type="text/html">
-                Alternative Content
-            </object>
-        </div>
-
-
 
 
     <!-- Javascript sementara-->
