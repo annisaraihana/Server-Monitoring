@@ -6,36 +6,57 @@ include 'env.php';
 <html>
     <head>
         <title>Servers Monitoring Dashboard</title>
-        <link rel="stylesheet" href="css/style.css">
+        <!--link rel="stylesheet" href="css/style.css"-->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         
 
     </head>
     <body>
 
     <!-- HTML body-->
+        <div>
+            <div class="my-8 rounded p-6 bg-gray-400">
+                <div class="bg-white rounded w-3/6 m-auto">
+                    <div class="m-auto text-white bg-blue-700 rounded">
+                        <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
+                    </div>
 
-    <center>
-        ____________________________________________________________________________________________
-        <h1>Active Servers (last hour)</h1>
-        _____________________________________________________________________________________________
-    </center>
-        <div id="chart-container">
-            <canvas id="ActiveServersGraph"></canvas>
-        </div>
+                    
+                    <p class="font-sans text-2xl font-bold m-4 mb-6 text-center">
+                        Jumlah server yang aktif saat ini (selama 1 jam kebelakang):
+                    </p>
+                
 
-        <div id="buttons">
-            <a href="Server_Statuses.php" class="button">Server Statuses</a>
-        </div>
-        <div id="buttons">
-            <a href="Monthly_Performance.php" class="button">Monthly Performance</a>
-        </div>
-        <div id="buttons">
-            <a href="Yearly_Performance.php" class="button">Yearly Performance</a>
-        </div>
+                    <div id="chart-container" class="container mx-auto my-16 pr-10">
+                        <canvas id="ActiveServersGraph"></canvas>
+                    </div>
 
+                </div>
+            </div>
+
+
+
+            <div id="options" class="grid grid-cols-3 gap-4 mx-4">
+
+                <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Server Statuses
+                </button>
+                <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Monthly Performance
+                </button>
+                <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                    Yearly Performance
+                </button>
+
+                <object id="GraphsContainer" class="w-full h-screen col-span-3" data="Monthly_Performance.php" type="text/html">
+                    Alternative Content
+                </object>
+            </div>
+
+        </div>
 
 
     <!-- Javascript sementara-->
@@ -44,6 +65,30 @@ include 'env.php';
         $(document).ready(function (){
             ActiveServersBarChart();
         });
+
+
+
+        $("#options button").click(function(e) { 
+                var isActive = $(this).hasClass('bg-black');
+                $('.bg-black').removeClass('bg-black').addClass('bg-purple-700');
+                if (!isActive) {
+                    $(this).removeClass('bg-purple-700').addClass('bg-black');
+                }
+                
+            });
+
+        document.getElementById('ServerStatuses').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Server_Statuses.php')
+        };
+        document.getElementById('MonthlyPerformance').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Monthly_Performance.php')
+        };
+        document.getElementById('YearlyPerformance').onclick=function(){
+        // Remove any element-specific value, falling back to stylesheets
+            document.getElementById('GraphsContainer').setAttribute('data','Yearly_Performance.php')
+        };
 
     </script>
 

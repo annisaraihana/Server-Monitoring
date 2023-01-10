@@ -2,22 +2,23 @@
 <html>
     <head>
         <title>Server Statuses</title>
-        <link rel="stylesheet" href="css/style.css">
+        <!--link rel="stylesheet" href="css/style.css"-->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
         
 
     </head>
     <body>
 
-    <center>
-        ____________________________________________________________________________________________
-        <h1>Grafik Status Server dalam sehari (01 Januari 2023)</h1>
-        _____________________________________________________________________________________________
-    </center>
+    <div class="grid">
+            <div class="fixed bg-white w-full">
+                <h1 class="text-center font-sans text-2xl font-bold m-4 mb-6">
+                    Grafik Status Server dalam sehari (01 Januari 2023)</h1>
+            </div>
     
-        <div id="small-chart-box">
+        <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
             <div id="small-chart-container">
                 <canvas id="Server001Graph"></canvas>
             </div>
@@ -118,12 +119,20 @@
                 <canvas id="Server032Graph"></canvas>
             </div>
         </div>
+    </div>
 
-        <script>
+    <script>
 
         $(document).ready(function (){
-            ServerStatusesLineCharts();
+            selesai();
         });
+
+        function selesai() {
+            setTimeout(function() {
+                ServerStatusesLineCharts();
+                selesai();
+            }, 200);
+}
 
         </script>
 
