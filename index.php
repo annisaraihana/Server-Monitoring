@@ -24,19 +24,19 @@ include 'env.php';
             Active Servers (last hour)</h1>
         
     </center>
-        <div id="chart-container" class="w-3/6 container mx-auto">
+        <div id="chart-container" class="w-3/6 container mx-auto my-16">
             <canvas id="ActiveServersGraph"></canvas>
         </div>
 
         <div id="options" class="grid grid-cols-3 gap-4 mx-4">
 
-            <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
+            <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
                 Server Statuses
             </button>
-            <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
+            <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
                 Monthly Performance
             </button>
-            <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
+            <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
                 Yearly Performance
             </button>
 

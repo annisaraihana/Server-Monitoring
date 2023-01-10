@@ -33,20 +33,17 @@ function ServerPercentageCurrentMonth() {
                         labels: ["active","inactive"],
                         datasets: [
                             {
-                                label: 'Active percentage',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
+                                
                                 data: [active,inactive],
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    
+                                backgroundColor: [ 
+                                    'rgba(54, 162, 235, 0.7)',
+                                    'rgba(255, 99, 132, 0.7)',   
+
                                 ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
+                                borderColor: [                              
                                     'rgba(54, 162, 235, 1)',
+                                    'rgba(255,99,132,1)',
+                                    
                                 
                                 ],
                                 borderWidth: 1

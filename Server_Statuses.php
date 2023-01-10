@@ -12,12 +12,11 @@
     </head>
     <body>
 
-    <center>
-       
-        <h1 class="font-sans text-2xl font-bold m-4 mb-6">
-            Grafik Status Server dalam sehari (01 Januari 2023)</h1>
-        
-    </center>
+    <div class="grid">
+            <div class="fixed bg-white w-full">
+                <h1 class="text-center font-sans text-2xl font-bold m-4 mb-6">
+                    Grafik Status Server dalam sehari (01 Januari 2023)</h1>
+            </div>
     
         <div class="grid grid-cols-4 gap-4 mx-4" id="small-chart-box">
             <div id="small-chart-container">
@@ -120,8 +119,9 @@
                 <canvas id="Server032Graph"></canvas>
             </div>
         </div>
+    </div>
 
-        <script>
+    <script>
 
         $(document).ready(function (){
             ServerStatusesLineCharts();
