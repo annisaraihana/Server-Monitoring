@@ -124,8 +124,15 @@
     <script>
 
         $(document).ready(function (){
-            ServerStatusesLineCharts();
+            selesai();
         });
+
+        function selesai() {
+            setTimeout(function() {
+                ServerStatusesLineCharts();
+                selesai();
+            }, 200);
+}
 
         </script>
 
