@@ -28,19 +28,19 @@ include 'env.php';
             <canvas id="ActiveServersGraph"></canvas>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 mx-4">
+        <div id="options" class="grid grid-cols-3 gap-4 mx-4">
 
-            <button id="ServerStatuses" class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+            <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
                 Server Statuses
             </button>
-            <button id="MonthlyPerformance" class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black visited:bg-black">
+            <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
                 Monthly Performance
             </button>
-            <button id="YearlyPerformance"class="text-white font-bold bg-purple-700 hover:bg-purple-800 py-2 px-4 rounded focus:bg-black">
+            <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-purple-800 py-2 px-4 rounded">
                 Yearly Performance
             </button>
 
-            <object id="GraphsContainer" class="w-screen h-screen"data="Monthly_Performance.php" type="text/html">
+            <object id="GraphsContainer" class="w-full h-screen col-span-3" data="Monthly_Performance.php" type="text/html">
                 Alternative Content
             </object>
         </div>
@@ -54,6 +54,17 @@ include 'env.php';
         $(document).ready(function (){
             ActiveServersBarChart();
         });
+
+
+
+        $("#options button").click(function(e) { 
+                var isActive = $(this).hasClass('bg-black');
+                $('.bg-black').removeClass('bg-black').addClass('bg-purple-700');
+                if (!isActive) {
+                    $(this).removeClass('bg-purple-700').addClass('bg-black');
+                }
+                
+            });
 
         document.getElementById('ServerStatuses').onclick=function(){
         // Remove any element-specific value, falling back to stylesheets
