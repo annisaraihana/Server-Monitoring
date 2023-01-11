@@ -17,8 +17,13 @@
                 <h1 class="text-center font-sans text-2xl font-bold m-4 mb-6">
                     Grafik Status Server dalam sehari (01 Januari 2023)</h1>
             </div>
+
+           
     
         <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
+
+
+
             <div id="small-chart-container">
                 <canvas id="Server001Graph"></canvas>
             </div>
@@ -121,19 +126,22 @@
         </div>
     </div>
 
+
+
     <script>
 
         $(document).ready(function (){
-            selesai();
+            ServerStatusesLineCharts();
         });
 
+/*
         function selesai() {
             setTimeout(function() {
                 ServerStatusesLineCharts();
                 selesai();
             }, 200);
-}
-
+        }
+*/
         </script>
 
         <script type="text/javascript" src="js\DisplayStatusChart.js" charset="utf-8"></script>
