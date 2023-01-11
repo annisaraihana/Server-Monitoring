@@ -18,7 +18,7 @@ include 'env.php';
 
     <!-- HTML body-->
         <div>
-            <div class="my-8 rounded p-6 bg-gray-400">
+            <div class="my-8 mx-4 rounded-xl p-6 bg-gray-400">
                 <div class="bg-white rounded w-3/6 m-auto">
                     <div class="m-auto text-white bg-blue-700 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
@@ -30,7 +30,7 @@ include 'env.php';
                     </p>
                 
 
-                    <div id="chart-container" class="container mx-auto my-16 pr-10">
+                    <div id="chart-container" class="container mx-auto my-6 pr-10">
                         <canvas id="ActiveServersGraph"></canvas>
                     </div>
 
