@@ -45,8 +45,8 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
 ### Folder Structure
 
 ```
-- root                 # berisi index.php dan pages lainnya
-  - css                # berisi file-file .css
-  - data               # berisi file-file .php yang mengambil data dari database.
-  - js                 # berisi libraries dan file .js yang menampilkan data di halaman. 
+- root                 # berisi index.php dan sub-pages lainnya
+  └── css              # berisi file-file .css
+  └── data             # berisi file-file .php controllers yang mengambil data dari database.
+  └── js               # berisi libraries dan file .js yang menampilkan data di halaman. 
 ```
