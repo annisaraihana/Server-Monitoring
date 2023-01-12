@@ -47,7 +47,9 @@ function ServerStatusesLineCharts(input) {
                     };
                     var graphTarget = $("#Server"+ServiceId[i]+"Graph");
                     console.log(graphTarget);
-                    var barGraph = new Chart(graphTarget, {
+                    var barGraph;
+                    
+                    barGraph = new Chart(graphTarget, {
                         type: 'line',
                         data: chartdata,    
                         borderWidth: 1
