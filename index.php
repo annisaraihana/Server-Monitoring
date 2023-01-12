@@ -15,11 +15,15 @@ include 'env.php';
 
     </head>
     
-    <body>
+    <body class="bg-green-100">
 
     <!-- HTML body-->
-        <div>
-            <div class="my-8 mx-4 rounded-xl p-6 bg-gray-400">
+        <header class="w-full h-20" style="background-color:#88B04B; background-image: url(images/bg_header_2017.png), url(images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
+            <p class="font-sans text-2xl text-center font-bold pt-5">Server Monitoring </p>
+        </header>
+
+        <div class="bg-green-100">
+            <div class="my-8 mx-4 rounded-xl p-6 bg-yellow-200">
                 <div class="bg-white rounded w-3/6 m-auto">
                     <div class="m-auto text-white bg-green-700 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
