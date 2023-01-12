@@ -16,10 +16,10 @@
             <div class="fixed bg-white w-full">
                 <div class="text-center font-sans font-bold m-4 mb-6 mr-20">
                     <button id="LastYear" class="text-white bg-green-700 font-bold hover:bg-black py-2 px-4 rounded">
-                            Performa tahun lalu  
+                            Performa tahun lalu ()
                     </button> 
                     <button id="CurrentYear" class="text-white bg-green-700 font-bold hover:bg-black py-2 px-4 rounded">
-                            Performa Tahun ini
+                            Performa Tahun ini ()
                     </button>    
                 </div>
             </div> 
@@ -135,6 +135,10 @@
                 ServerPercentagePrevYear();
             };
         });
+
+        const d = new Date();
+        document.getElementById("CurrentYear").innerHTML = "Performa tahun ini (" + d.getFullYear() + ")";
+        document.getElementById("LastYear").innerHTML = "Performa tahun lalu (" + (d.getFullYear()-1) + ")"
 
         </script>
         <script type="text/javascript" src="js\DisplayPercentagesYear.js" charset="utf-8"></script>
