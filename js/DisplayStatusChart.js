@@ -1,5 +1,6 @@
-function ServerStatusesLineCharts() {
+function ServerStatusesLineCharts(input) {
     
+    console.log(input);
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
@@ -17,7 +18,7 @@ function ServerStatusesLineCharts() {
 
         for (let i = 0; i < ServiceId.length; i++){
 
-            $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i], 'Timestamp': input }, 
                 function (data)
                 {
                     console.log(data);
@@ -46,7 +47,9 @@ function ServerStatusesLineCharts() {
                     };
                     var graphTarget = $("#Server"+ServiceId[i]+"Graph");
                     console.log(graphTarget);
-                    var barGraph = new Chart(graphTarget, {
+                    var barGraph;
+                    
+                    barGraph = new Chart(graphTarget, {
                         type: 'line',
                         data: chartdata,    
                         borderWidth: 1
