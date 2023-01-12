@@ -14,13 +14,14 @@ include 'env.php';
         
 
     </head>
+    
     <body>
 
     <!-- HTML body-->
         <div>
             <div class="my-8 mx-4 rounded-xl p-6 bg-gray-400">
                 <div class="bg-white rounded w-3/6 m-auto">
-                    <div class="m-auto text-white bg-blue-700 rounded">
+                    <div class="m-auto text-white bg-green-700 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
                     </div>
 
@@ -41,13 +42,13 @@ include 'env.php';
 
             <div id="options" class="grid grid-cols-3 gap-4 mx-4">
 
-                <button id="ServerStatuses" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                <button id="ServerStatuses" class="text-white bg-green-700 font-bold hover:bg-black py-2 px-4 rounded">
                     Server Statuses
                 </button>
-                <button id="MonthlyPerformance" class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                <button id="MonthlyPerformance" class="text-white bg-green-700 font-bold hover:bg-black py-2 px-4 rounded">
                     Monthly Performance
                 </button>
-                <button id="YearlyPerformance"class="text-white bg-purple-700 font-bold hover:bg-black py-2 px-4 rounded">
+                <button id="YearlyPerformance"class="text-white bg-green-700 font-bold hover:bg-black py-2 px-4 rounded">
                     Yearly Performance
                 </button>
 
@@ -70,9 +71,9 @@ include 'env.php';
 
         $("#options button").click(function(e) { 
                 var isActive = $(this).hasClass('bg-black');
-                $('.bg-black').removeClass('bg-black').addClass('bg-purple-700');
+                $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
                 if (!isActive) {
-                    $(this).removeClass('bg-purple-700').addClass('bg-black');
+                    $(this).removeClass('bg-green-700').addClass('bg-black');
                 }
                 
             });

@@ -32,7 +32,7 @@ function ServerStatusesLineCharts() {
                         datasets: [
                             {
                                 label: ServiceDesc[i], 
-                                backgroundColor: 'rgb(103, 161, 118)',
+                                backgroundColor: 'rgb(16, 185, 129)',
                                 borderColor: 'rgb(100, 129, 120)',
                                 hoverBackgroundColor: '#CCCCCC',
                                 hoverBorderColor: '#666666',
