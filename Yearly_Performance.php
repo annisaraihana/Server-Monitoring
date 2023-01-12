@@ -15,7 +15,7 @@
     <div class="grid">
             <div class="fixed bg-white w-full">
                 <h1 class="text-center font-sans text-2xl font-bold m-4 mb-6">
-                Performa Tahun ini (YEAR 2022)</h1>
+                Performa Tahun ini</h1>
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
