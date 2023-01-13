@@ -4,7 +4,7 @@ include '../autoload.php';
 
 header('Content-Type: application/json');
 $conn = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'),env('DB_NAME'));
-$sqlQuery = "SELECT `trans_status`.`run_time` AS `Timestamp`, COUNT(`trans_status`.`status`) AS `ActiveServers` FROM `trans_status` WHERE `trans_status`.`status` = '1' AND `trans_status`.`run_time` >= '2023-01-01 00:00:01' AND `trans_status`.`run_time` <= '2023-01-01 00:59:59' GROUP BY Timestamp;";
+$sqlQuery = "SELECT `trans_status`.`run_time` AS `Timestamp`, COUNT(`trans_status`.`status`) AS `ActiveServers` FROM `trans_status` WHERE `trans_status`.`status` = '1' AND `trans_status`.`run_time` >= DATE_SUB(NOW(), INTERVAL 1 HOUR) GROUP BY Timestamp;";
 $result = mysqli_query($conn,$sqlQuery);
 $data = array();
 foreach ($result as $row) {

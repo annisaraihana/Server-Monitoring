@@ -35,7 +35,7 @@ include 'env.php';
                     </p>
                 
 
-                    <div id="chart-container" class="container mx-auto my-6 pr-10">
+                    <div id="active-server-chart-container" class="container mx-auto my-6 pr-10">
                         <canvas id="ActiveServersGraph"></canvas>
                     </div>
 
@@ -68,7 +68,7 @@ include 'env.php';
     <!-- script untuk menampilkan graphs-->
     <script>
         $(document).ready(function (){
-            ActiveServersBarChart();
+            setInterval(ActiveServersBarChart, 10000); 
         });
 
 

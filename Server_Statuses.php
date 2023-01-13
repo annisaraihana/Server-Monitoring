@@ -20,14 +20,14 @@
                 </h1>
                 <div class="columns-3 ml-8 mb-8">
                     <p class="font-sans font-bold">
-                        Pilih tanggal : 
+                        Pilih tanggal, tunggu beberapa saat : 
                     </p>
                     <input type="date" id="dateInput"/>
                     <button class="text-center text-white font-sans bg-red-500 hover:bg-red-700 ml-4 p-2 rounded" id="Refresh">
                         Clear Data  
                     </button>
                     
-                        ----Untuk menghindari bug, mohon tekan setiap akan mengganti tanggal.
+                        ----Untuk menghindari bug, mohon tekan sebelum akan mengganti tanggal.
                     
                 </div>
             </div>
