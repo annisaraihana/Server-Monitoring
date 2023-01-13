@@ -14,8 +14,18 @@
     
     <div class="grid">
             <div class="fixed bg-white w-full">
-                <h1 class="text-center font-sans text-2xl font-bold m-4 mb-6">
-                Performa Tahun ini (YEAR 2022)</h1>
+                <div class="text-center font-sans font-bold m-4 mb-6 mr-20">
+                    <div id="options">                       
+                        <button id="LastYear" class="YearButton text-gray-200 bg-gray-500 font-bold hover:bg-gray-700 py-2 px-4 rounded">
+                                Performa tahun lalu ()
+                        </button> 
+                        <span id="LabelTahun" class="text-center mx-4"> Pilih tahun: </span>
+                        <button id="CurrentYear" class="YearButton text-gray-200 bg-gray-500 font-bold hover:bg-gray-700 py-2 px-4 rounded">
+                                Performa tahun ini ()
+                        </button>  
+
+                    </div>
+                </div>
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
@@ -121,104 +131,38 @@
 
     <script>
 
-        $(document).ready(function (){
-            ServerPercentageCurrentYear();
+
+
+        $(document).ready(function (){        
+
+            document.getElementById('CurrentYear').onclick=function(){
+                ServerPercentageCurrentYear();
+            };
+            document.getElementById('LastYear').onclick=function(){
+                ServerPercentagePrevYear();
+            };
+
         });
+
+        $("#options button").click(function(e) { 
+                var isActive = $(this).hasClass('bg-white text-black');
+                $('#options button','.bg-white').removeClass('bg-white text-black').addClass('bg-gray-500 text-gray-200');
+                if (!isActive) {
+                    $(this).removeClass('bg-gray-500 text-gray-200').addClass('bg-white text-black');
+                }
+                
+            });
+
+        const d = new Date();
+        document.getElementById("CurrentYear").innerHTML = "Performa tahun ini (" + d.getFullYear() + ")";
+        document.getElementById("LastYear").innerHTML = "Performa tahun lalu (" + (d.getFullYear()-1) + ")"
 
         </script>
         <script type="text/javascript" src="js\DisplayPercentagesYear.js" charset="utf-8"></script>
 
 
     <script>
-/*
-    var ServiceId = [];
-    var ServiceName = [];
-    var ServiceDesc = [];
-    
 
-    $.post("data/GetServiceNames_data.php", function(data)
-    {
-        console.log(data);
-        
-        for (let i in data) {
-            ServiceId.push(data[i].ServiceId);
-            ServiceName.push(data[i].ServiceName);
-            ServiceDesc.push(data[i].ServiceDesc);
-        }
-
-        for (let i = 0; i < ServiceId.length; i++){
-
-            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, 
-                function (data)
-                {
-                    console.log(data);
-
-                    var active = [];
-                    var inactive = [];
-
-                    for (let i in data) {
-                        active.push(data[i].ActiveCount);
-                        inactive.push(data[i].InactiveCount);
-                    }
-
-                    var chartdata = {
-                        labels: ["active","inactive"],
-                        datasets: [
-                            {
-                                label: 'Active percentage',
-                                backgroundColor: '#49e2ff',
-                                borderColor: '#46d5f1',
-                                hoverBackgroundColor: '#CCCCCC',
-                                hoverBorderColor: '#666666',
-                                data: [active,inactive],
-                                backgroundColor: [
-                                    'rgba(255, 99, 132, 0.2)',
-                                    'rgba(54, 162, 235, 0.2)',
-                                    
-                                ],
-                                borderColor: [
-                                    'rgba(255,99,132,1)',
-                                    'rgba(54, 162, 235, 1)',
-                                
-                                ],
-                                borderWidth: 1
-                            }
-                        ]
-                    };
-                    
-                    var graphTarget = $("#Server"+ServiceId[i]+"Percentage");
-                    console.log(graphTarget);
-                    var barGraph = new Chart(graphTarget, {
-                    type: 'doughnut',
-                    data: chartdata,
-                    options: {
-                        cutoutPercentage: 80,
-                        title: {
-                        display: true,
-                        text: ServiceDesc[i]
-                        },
-                        plugins: {
-                            doughnutlabel: {
-                                labels: [
-                                {
-                                    text: (parseInt(active)*100/(parseInt(active)+parseInt(inactive))).toFixed(3)+'%',
-                                    font: {
-                                    size: '20'
-                                    }
-                                }
-                                
-                                ]
-                            }
-
-                        }
-                    }
-                });
-                });
-
-        }
-
-    });
-*/
 
     </script>   
     </body>
