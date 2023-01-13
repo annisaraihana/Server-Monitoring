@@ -38,6 +38,17 @@ function ActiveServersBarChart() {
                 barGraph = new Chart(graphTarget, {
                     type: 'bar',
                     data: chartdata,    
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                                    suggestedMax: 40
+                                }
+                            }]
+                        }
+                    },
                     borderWidth: 1
                 });
             }
