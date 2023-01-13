@@ -19,7 +19,7 @@ include 'env.php';
 
     <!-- HTML body-->
         <header class="w-full h-20" style="background-color:#88B04B; background-image: url(images/bg_header_2017.png), url(images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
-            <p class="font-sans text-2xl text-center font-bold pt-5">Server Monitoring </p>
+            <p class="font-sans text-2xl text-center font-bold pt-5">SERVER MONITORING </p>
         </header>
 
         <div class="bg-green-100">
