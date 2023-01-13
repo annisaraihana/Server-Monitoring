@@ -1,5 +1,6 @@
 function ActiveServersBarChart() {
     {   
+        /*
         var containerDiv = document.getElementById('active-server-chart-container');
         var oldcanv = document.getElementById('ActiveServersGraph');
         containerDiv.removeChild(oldcanv)
@@ -7,6 +8,7 @@ function ActiveServersBarChart() {
         var canv = document.createElement('canvas');
         canv.id = 'ActiveServersGraph';
         containerDiv.appendChild(canv);
+        */
 
         $.post("data/ActiveServers_data.php",
         function (data)
