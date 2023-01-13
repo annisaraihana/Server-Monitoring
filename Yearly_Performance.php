@@ -145,6 +145,7 @@
         });
 
         $("#options button").click(function(e) { 
+                document.getElementById('LabelTahun').innerHTML = "";
                 var isActive = $(this).hasClass('bg-white text-black');
                 $('#options button','.bg-white').removeClass('bg-white text-black').addClass('bg-gray-500 text-gray-200');
                 if (!isActive) {
