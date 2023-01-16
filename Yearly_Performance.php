@@ -30,100 +30,100 @@
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
             
-                <div id="small-chart-container">
+                <div id="Server001" class="small-chart-container">
                         <canvas id="Server001Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server002" class="small-chart-container">
                         <canvas id="Server002Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server003" class="small-chart-container">
                         <canvas id="Server003Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server004" class="small-chart-container">
                         <canvas id="Server004Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server005" class="small-chart-container">
                         <canvas id="Server005Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server006" class="small-chart-container">
                     <canvas id="Server006Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server007" class="small-chart-container">
                     <canvas id="Server007Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server008" class="small-chart-container">
                     <canvas id="Server008Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server009" class="small-chart-container">
                     <canvas id="Server009Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server010" class="small-chart-container">
                     <canvas id="Server010Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server011" class="small-chart-container">
                     <canvas id="Server011Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server012" class="small-chart-container">
                     <canvas id="Server012Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server013" class="small-chart-container">
                     <canvas id="Server013Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server014" class="small-chart-container">
                     <canvas id="Server014Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server015" class="small-chart-container">
                     <canvas id="Server015Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server016" class="small-chart-container">
                     <canvas id="Server016Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server017" class="small-chart-container">
                     <canvas id="Server017Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server018" class="small-chart-container">
                     <canvas id="Server018Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server019" class="small-chart-container">
                     <canvas id="Server019Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div  id="Server020" class="small-chart-container">
                     <canvas id="Server020Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server021" class="small-chart-container">
                     <canvas id="Server021Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server022" class="small-chart-container">
                     <canvas id="Server022Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server023" class="small-chart-container">
                     <canvas id="Server023Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server024" class="small-chart-container">
                     <canvas id="Server024Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server025" class="small-chart-container">
                     <canvas id="Server025Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server026" class="small-chart-container">
                     <canvas id="Server026Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server027" class="small-chart-container">
                     <canvas id="Server027Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server028" class="small-chart-container">
                     <canvas id="Server028Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server029" class="small-chart-container">
                     <canvas id="Server029Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server030" class="small-chart-container">
                     <canvas id="Server030Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server031" class="small-chart-container">
                     <canvas id="Server031Percentage"></canvas>
                 </div>
-                <div id="small-chart-container">
+                <div id="Server032" class="small-chart-container">
                     <canvas id="Server032Percentage"></canvas>
                 </div>
         </div>

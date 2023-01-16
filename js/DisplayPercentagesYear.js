@@ -49,6 +49,9 @@ function ServerPercentageCurrentYear() {
                             }
                         ]
                     };
+
+                    $("#Server"+ServiceId[i]+"Percentage").remove(); 
+                    $("#Server"+ServiceId[i]).append("<canvas id=Server"+ServiceId[i]+"Percentage></canvas>");
                     
                     var graphTarget = $("#Server"+ServiceId[i]+"Percentage");
                     console.log(graphTarget);
@@ -136,6 +139,9 @@ function ServerPercentagePrevYear() {
                             }
                         ]
                     };
+
+                    $("#Server"+ServiceId[i]+"Percentage").remove(); 
+                    $("#Server"+ServiceId[i]).append("<canvas id=Server"+ServiceId[i]+"Percentage></canvas>");
                     
                     var graphTarget = $("#Server"+ServiceId[i]+"Percentage");
                     console.log(graphTarget);
