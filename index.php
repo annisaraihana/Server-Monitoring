@@ -18,8 +18,8 @@ include 'env.php';
     <body class="bg-green-100">
 
     <!-- HTML body-->
-        <header class="w-full h-20" style="background-color:#88B04B; background-image: url(images/bg_header_2017.png), url(images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
-            <p class="font-sans text-2xl text-center font-bold pt-5">SERVER MONITORING </p>
+        <header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(images/bg_header_2017.png), url(images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
+            <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
         </header>
 
         <div class="bg-green-100">
