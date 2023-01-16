@@ -1,5 +1,17 @@
+var barGraph;
+
 function ActiveServersBarChart() {
-    {
+    {   
+        /*
+        var containerDiv = document.getElementById('active-server-chart-container');
+        var oldcanv = document.getElementById('ActiveServersGraph');
+        containerDiv.removeChild(oldcanv)
+
+        var canv = document.createElement('canvas');
+        canv.id = 'ActiveServersGraph';
+        containerDiv.appendChild(canv);
+        */
+
         $.post("data/ActiveServers_data.php",
         function (data)
         {
@@ -25,11 +37,45 @@ function ActiveServersBarChart() {
                 ]
             };
             var graphTarget = $("#ActiveServersGraph");
-            var barGraph = new Chart(graphTarget, {
-                type: 'bar',
-                data: chartdata,    
-                borderWidth: 1
-            });
+            if (!barGraph){
+                barGraph = new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata,    
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                                    suggestedMax: 40
+                                }
+                            }]
+                        }
+                    },
+                    borderWidth: 1
+                });
+            }
+            else {
+                barGraph.destroy();
+                barGraph = new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata,    
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                                    suggestedMax: 40
+                                }
+                            }]
+                        }
+                    },
+                    borderWidth: 1
+                });
+                console.log("chart updated");
+            }
+
         });
     }
 }
