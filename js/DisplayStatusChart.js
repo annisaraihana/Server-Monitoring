@@ -45,6 +45,10 @@ function ServerStatusesLineCharts(input) {
                             }
                         ]
                     };
+
+                    $("#Server"+ServiceId[i]+"Graph").remove(); 
+                    $("#Server"+ServiceId[i]).append("<canvas id=Server"+ServiceId[i]+"Graph></canvas>");
+
                     var graphTarget = $("#Server"+ServiceId[i]+"Graph");
                     console.log(graphTarget);
                     var barGraph;

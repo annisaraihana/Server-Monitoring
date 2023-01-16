@@ -8,7 +8,7 @@ BODY {
     width: 100%;
     height: auto;
 }
-#small-chart-container {
+.small-chart-container {
     width: 30%;
     height: auto;
 }
