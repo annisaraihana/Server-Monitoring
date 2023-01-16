@@ -1,3 +1,5 @@
+var barGraph;
+
 function ActiveServersBarChart() {
     {   
         /*
@@ -35,7 +37,6 @@ function ActiveServersBarChart() {
                 ]
             };
             var graphTarget = $("#ActiveServersGraph");
-            var barGraph;
             if (!barGraph){
                 barGraph = new Chart(graphTarget, {
                     type: 'bar',
@@ -55,17 +56,26 @@ function ActiveServersBarChart() {
                 });
             }
             else {
-                UpdateChart(barGraph, Timestamp, ActiveServers)
+                barGraph.destroy();
+                barGraph = new Chart(graphTarget, {
+                    type: 'bar',
+                    data: chartdata,    
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                display: true,
+                                ticks: {
+                                    suggestedMin: 0,    // minimum will be 0, unless there is a lower value.
+                                    suggestedMax: 40
+                                }
+                            }]
+                        }
+                    },
+                    borderWidth: 1
+                });
+                console.log("chart updated");
             }
 
         });
     }
-}
-
-function UpdateChart(chart, label, data) {   
-    chart.data.labels.push(label);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-    });
-    chart.update();
 }
