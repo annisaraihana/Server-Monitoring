@@ -19,6 +19,9 @@
                 <select name="Servers" id="ServersSelect">
                     <option value='0'>Pilih server</option>        
                 </select>
+                <button id="BulanTahunini" class="text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun ini </button>
+                <button id="BulanTahunLalu" class="text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun lalu</button>
+                
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-40 " id="small-chart-box">
@@ -71,7 +74,12 @@
             document.getElementById("ServersSelect").addEventListener("change", function() {
                 input = this.value;
                 console.log(input);
-                DisplayServerAllMonthCuryear(input);
+                document.getElementById('BulanTahunini').onclick=function(){
+                    DisplayServerAllMonthCuryear(input);
+                };
+                document.getElementById('BulanTahunLalu').onclick=function(){
+                    DisplayServerAllMonthPrevyear(input);
+                };
             });
         });
 
@@ -98,7 +106,7 @@
                     }
 
                     for (let i = 0; i < ServiceId.length; i++){
-                        $('#ServersSelect').append($('<option value='+ServiceId[i]+'>'+ServiceName[i]+'</option>'));
+                        $('#ServersSelect').append($('<option value='+ServiceId[i]+'>'+ServiceDesc[i]+'</option>'));
                     }
             });
         }

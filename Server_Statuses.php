@@ -16,7 +16,7 @@
 
             <div class="fixed bg-white w-full">
                 <h1 class="text-center font-sans text-2xl font-bold m-4 mb-2">
-                    Grafik Status Server dalam sehari
+                    Grafik Status Semua Server per-hari
                 </h1>
                 <div class="columns-3 ml-8 mb-8">
                     <p class="font-sans font-bold">
