@@ -16,7 +16,7 @@
             <div class="fixed bg-white w-full">
                 <h1 id="TitleBulan" class="text-center font-sans text-2xl font-bold m-4 mb-6">
                     Performa per-bulan</h1>
-                <select name="Servers" id="ServersSelect">
+                <select name="Servers" id="ServersSelect" class="font-sans font-bold">
                     <option value='0'>Pilih server</option>        
                 </select>
                 <button id="BulanTahunini" class="text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun ini </button>
