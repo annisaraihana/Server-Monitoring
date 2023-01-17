@@ -13,14 +13,14 @@
     <body>
     
     <div class="grid">
-            <div class="fixed bg-white w-full">
+            <div class="fixed bg-green-200 w-full">
                 <div class="text-center font-sans font-bold m-4 mb-6 mr-20">
                     <div id="options">                       
-                        <button id="LastYear" class="YearButton text-gray-200 bg-gray-500 font-bold hover:bg-gray-700 py-2 px-4 rounded">
+                        <button id="LastYear" class="YearButton text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded">
                                 Performa tahun lalu ()
                         </button> 
                         <span id="LabelTahun" class="text-center mx-4"> Pilih tahun: </span>
-                        <button id="CurrentYear" class="YearButton text-gray-200 bg-gray-500 font-bold hover:bg-gray-700 py-2 px-4 rounded">
+                        <button id="CurrentYear" class="YearButton text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded">
                                 Performa tahun ini ()
                         </button>  
 
@@ -146,10 +146,10 @@
 
         $("#options button").click(function(e) { 
                 document.getElementById('LabelTahun').innerHTML = "";
-                var isActive = $(this).hasClass('bg-white text-black');
-                $('#options button','.bg-white').removeClass('bg-white text-black').addClass('bg-gray-500 text-gray-200');
+                var isActive = $(this).hasClass('bg-black');
+                $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
                 if (!isActive) {
-                    $(this).removeClass('bg-gray-500 text-gray-200').addClass('bg-white text-black');
+                    $(this).removeClass('bg-green-700').addClass('bg-black');
                 }
                 
             });

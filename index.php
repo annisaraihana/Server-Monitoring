@@ -25,7 +25,7 @@ include 'env.php';
         <div class="bg-green-100">
             <div class="my-8 mx-4 rounded-xl p-6 bg-yellow-200">
                 <div class="bg-white rounded w-3/6 m-auto">
-                    <div class="m-auto text-white bg-green-700 rounded">
+                    <div class="m-auto text-white bg-green-500 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
                     </div>
 
@@ -56,7 +56,7 @@ include 'env.php';
                     Yearly Performance
                 </button>
 
-                <object id="GraphsContainer" class="w-full h-screen col-span-3" data="Monthly_Performance.php" type="text/html">
+                <object id="GraphsContainer" class="w-full h-screen col-span-3" data="" type="text/html">
                     Alternative Content
                 </object>
             </div>
@@ -68,6 +68,7 @@ include 'env.php';
     <!-- script untuk menampilkan graphs-->
     <script>
         $(document).ready(function (){
+            ActiveServersBarChart();
             setInterval(ActiveServersBarChart, 10000); 
         });
 
@@ -88,7 +89,7 @@ include 'env.php';
         };
         document.getElementById('MonthlyPerformance').onclick=function(){
         // Remove any element-specific value, falling back to stylesheets
-            document.getElementById('GraphsContainer').setAttribute('data','Monthly_Performance.php')
+            document.getElementById('GraphsContainer').setAttribute('data','EachServersMonthly_Performance.php')
         };
         document.getElementById('YearlyPerformance').onclick=function(){
         // Remove any element-specific value, falling back to stylesheets
