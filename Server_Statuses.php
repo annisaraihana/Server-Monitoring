@@ -14,7 +14,7 @@
 
     <div class="grid">
 
-            <div class="fixed bg-white w-full">
+            <div class="fixed bg-green-200 w-full">
                 <h1 class="text-center font-sans text-2xl font-bold m-4 mb-2">
                     Grafik Status Semua Server per-hari
                 </h1>

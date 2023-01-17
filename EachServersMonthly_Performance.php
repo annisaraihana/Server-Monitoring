@@ -13,15 +13,18 @@
     <body>
     
     <div class="grid">
-            <div class="fixed bg-white w-full">
+            <div class="fixed bg-green-200 w-full col-span-3">
                 <h1 id="TitleBulan" class="text-center font-sans text-2xl font-bold m-4 mb-6">
-                    Performa per-bulan</h1>
-                <select name="Servers" id="ServersSelect" class="font-sans font-bold">
-                    <option value='0'>Pilih server</option>        
-                </select>
-                <button id="BulanTahunini" class="text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun ini </button>
-                <button id="BulanTahunLalu" class="text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun lalu</button>
-                
+                    Performa Server Tiap Bulan</h1>
+                <div class="ml-8 mb-8">
+                    <select name="Servers" id="ServersSelect" class="font-sans font-bold">
+                        <option value='0'>Pilih server</option>        
+                    </select>
+                  
+                        <button id="BulanTahunini" class="m-2 text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun ini </button>
+                        <button id="BulanTahunLalu" class="ml-0.5 text-white bg-green-700 font-bold hover:bg-green-900 py-2 px-4 rounded"> Tahun lalu</button>
+               
+                </div>
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-40 " id="small-chart-box">
@@ -82,6 +85,15 @@
                 };
             });
         });
+
+        $("#BulanTahunini, #BulanTahunLalu").click(function(e) { 
+                var isActive = $(this).hasClass('bg-black');
+                $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
+                if (!isActive) {
+                    $(this).removeClass('bg-green-700').addClass('bg-black');
+                }
+                
+            });
 
         
     </script>
