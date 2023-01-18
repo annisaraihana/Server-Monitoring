@@ -36,9 +36,7 @@ Pilih tanggal hari yang diinginkan. Aplikasi akan mengambil log dari semua serve
   
 Setelah suatu tanggal dipilih, aplikasi akan secara otomatis mulai memuat grafik dari log-log tersebut. 
 
-[badge-warning]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/warning.svg 'Warning'
-
-> ![badge-warning][badge-warning]<br>
+> ![warning](https://user-images.githubusercontent.com/72925939/213122914-af38c80d-afcd-44f7-82fc-0985747fd91a.svg)  
 > **Penting untuk membiarkan semua grafik selesai memuat sebelum memilih tanggal baru.**  
   
 Setiap grafik hanya menunjukkan keberadaan status sebuah server sebagai "0" atau "1". **Untuk melihat kapan server mengalami down**, dapat mendekatkan kursor ke titik dimana grafik mengalami penurunan. Anda akan melihat timestamp persis dimana status "0" itu terekam.  
@@ -48,12 +46,8 @@ Setiap grafik hanya menunjukkan keberadaan status sebuah server sebagai "0" atau
 Selain melihat status server hari ini, Anda juga dapat melihat status server di hari-hari sebelumnya.  
   
 Tanggal yang menunjuk hari di masa depan hanya akan memuat grafik yang kosong.  
-  
-
-[badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
-  
-  
-> ![badge-info][badge-info]<br>
+   
+> ![info](https://user-images.githubusercontent.com/72925939/213124474-9bf16ef5-91ec-49e2-a874-8b511fa993ed.svg)  
 >**Anda harus reload secara manual untuk melihat status 'Hari ini' yang paling terkini.**
 
 ---
