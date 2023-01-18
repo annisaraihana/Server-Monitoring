@@ -113,12 +113,19 @@ Tailwind menyediakan class-class yang dapat digunakan secara langsung di inline 
 
 **Penginstallan Tailwind CSS**
 
-Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-output file .css yang berisi konfigurasi semua class yang kita gunakan di dalam file html tersebut. Penginstallannya mudah.
+Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-output file .css yang berisi konfigurasi semua class yang kita gunakan di dalam file html tersebut. Penginstallannya tanpa melalui package manager pun cukup mudah.
 
-buka terminal di folder root, ketikkan command berikut,
+buka terminal di folder root, ketikkan command-command berikut,
 
 ```
-./tailwindcss
+# Untuk membuat file tailwind.config.js (seharusnya sudah ada)
+./tailwindcss init
+
+# Untuk memulai sebuah watcher yang akan mengetrack secara otomatis 
+./tailwindcss -i input.css -o output.css --watch
+
+# jika ingin meng Compile and minify CSS nya
+./tailwindcss -i input.css -o output.css --minify
 ```
 
 Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwindcss.com/docs/)
