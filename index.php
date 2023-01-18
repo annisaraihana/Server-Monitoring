@@ -10,7 +10,7 @@ include 'env.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link href="output.css" rel="stylesheet">
         
 
     </head>
@@ -23,7 +23,7 @@ include 'env.php';
         </header>
 
         <div class="bg-green-100">
-            <div class="my-8 mx-4 rounded-xl p-6 bg-yellow-200">
+            <div class="my-8 mx-4 rounded-xl p-6 bg-amber-100">
                 <div class="bg-white rounded w-3/6 m-auto">
                     <div class="m-auto text-white bg-green-500 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
