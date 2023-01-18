@@ -9,6 +9,7 @@ Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui l
   - [Melihat jumlah server yang sedang aktif saat ini](#melihat-jumlah-server-yang-sedang-aktif-saat-ini)
   - [Melihat kapan saja server mengalami down](#melihat-kapan-saja-server-mengalami-down)
   - [Melihat performa sebuah server selama setahun](#melihat-performa-sebuah-server-selama-setahun-dan-pada-bulan-apa-server-paling-sering-mengalami-down)
+  - [Menyimpan grafik sebagai gambar](#menyimpan-grafik-sebagai-gambar)
 - [Untuk pengembang](#untuk-pengembang)
 
 ## Untuk Pengguna
@@ -71,6 +72,15 @@ Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, den
 **Jika ingin melihat kapan saja sebuah server paling sering mengalami down,** pergi ke Monthly Performance dan pilih salah satu server di dalam kolom. Klik tombol "Tahun ini" atau "Tahun lalu" sesuai dengan informasi yang Anda cari. Aplikasi akan menampilkan grafik performa server itu tiap bulannya, termasuk bulan yang memiliki angka persentase paling kecil. 
 
 ![persentasi-database-kecil-001](https://user-images.githubusercontent.com/72925939/213086345-910d888f-7e15-49e1-b973-62ecafc37a85.jpg)
+
+
+---
+
+### Menyimpan grafik sebagai gambar
+
+Setiap grafik yang tampil dapat langsung disimpan sebagai gambar .png dengan mengklik-kanan grafik tersebut dan menekan "Save image as..."
+
+![save-as](https://user-images.githubusercontent.com/72925939/213106137-28b1d14a-757d-4759-bafc-a22a1fface6f.jpg)
 
 
 ---
