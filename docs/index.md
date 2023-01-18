@@ -53,7 +53,13 @@ Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, den
   
 **Jika ingin melihat performa suatu server dalam setahun,** pergi ke halaman Yearly Performance dan pilih "Performa Tahun ini" atau "Performa Tahun lalu", lalu temukan nama server yang Anda inginkan.
 
+![persentasi-database-001](https://user-images.githubusercontent.com/72925939/213086323-39d8fc0d-93b5-4873-99dd-022125710678.jpg)
+
+
 **Jika ingin melihat kapan saja sebuah server paling sering mengalami down,** pergi ke Monthly Performance dan pilih salah satu server di dalam kolom. Klik tombol "Tahun ini" atau "Tahun lalu" sesuai dengan informasi yang Anda cari. Aplikasi akan menampilkan grafik performa server itu tiap bulannya, termasuk bulan yang memiliki angka persentase paling kecil. 
+
+![persentasi-database-kecil-001](https://user-images.githubusercontent.com/72925939/213086345-910d888f-7e15-49e1-b973-62ecafc37a85.jpg)
+
 
 ---
 
