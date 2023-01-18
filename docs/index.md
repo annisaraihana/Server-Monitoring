@@ -117,7 +117,7 @@ Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-outp
 
 buka terminal di folder root, ketikkan command-command berikut,
 
-```
+```Shell
 # Untuk membuat file tailwind.config.js (seharusnya sudah ada)
 ./tailwindcss init
 
