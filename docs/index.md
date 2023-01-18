@@ -2,8 +2,8 @@
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
 untuk pengembangan selanjutnya.
 ## Daftar isi
-- [Untuk pengguna](https://github.com/annisaraihana/Server-Monitoring/new/main#untuk-pengguna)
-- [Untuk pengembang] (##untuk-pengembang)
+- [Untuk pengguna](#untuk-pengguna)
+- [Untuk pengembang](#untuk-pengembang)
 
 ## Untuk Pengguna
 
@@ -19,7 +19,9 @@ Setelah sebuah tanggal terpilih, aplikasi akan secara otomatis mulai memuat graf
 Penting untuk membiarkan semua grafik selesai memuat sebelum memilih tanggal baru.  
   
 Setiap grafik hanya menunjukkan keberadaan status sebuah server sebagai "0" atau "1". Untuk melihat kapan server mengalami down, dapat mendekatkan kursor ke titik dimana 
-grafik mengalami penurunan. Anda akan melihat timestamp persis status "0" itu terekam.
+grafik mengalami penurunan. Anda akan melihat timestamp persis dimana status "0" itu terekam.  
+  
+Selain melihat status server hari ini, Anda juga dapat melihat status server di hari-hari sebelumnya dengan mengganti tanggal. Tanggal yang menunjuk hari di masa depan hanya akan memuat grafik yang kosong.
 
 
 ## Untuk Pengembang
