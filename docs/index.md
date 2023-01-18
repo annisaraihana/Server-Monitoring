@@ -2,7 +2,7 @@
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
 untuk pengembangan selanjutnya.  
   
-Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui link http://10.100.254.116/monitoring/ 
+Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui link: http://10.100.254.116/monitoring/ 
 
 ## Daftar isi
 - [Untuk pengguna](#untuk-pengguna)
@@ -34,7 +34,11 @@ Tombol "Server Statuses" di halaman utama akan membuka sebuah sub halaman di baw
 Pilih tanggal hari yang diinginkan. Aplikasi akan mengambil log dari semua server yang memiliki timestamp yang sama dengan tanggal tersebut.  
   
 Setelah suatu tanggal dipilih, aplikasi akan secara otomatis mulai memuat grafik dari log-log tersebut. 
-**Penting untuk membiarkan semua grafik selesai memuat sebelum memilih tanggal baru.**  
+
+[badge-warning]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/warning.svg 'Warning'
+
+> ![badge-warning][badge-warning]<br>
+> **Penting untuk membiarkan semua grafik selesai memuat sebelum memilih tanggal baru.**  
   
 Setiap grafik hanya menunjukkan keberadaan status sebuah server sebagai "0" atau "1". **Untuk melihat kapan server mengalami down**, dapat mendekatkan kursor ke titik dimana grafik mengalami penurunan. Anda akan melihat timestamp persis dimana status "0" itu terekam.  
 
@@ -44,7 +48,12 @@ Selain melihat status server hari ini, Anda juga dapat melihat status server di 
   
 Tanggal yang menunjuk hari di masa depan hanya akan memuat grafik yang kosong.  
   
-**Anda harus reload secara manual untuk melihat status 'Hari ini' yang paling terkini.**
+
+[badge-info]: https://github.com/Mqxx/GitHub-Markdown/blob/main/blockquotes/badge/info.svg 'Info'
+  
+  
+> ![badge-info][badge-info]<br>
+>**Anda harus reload secara manual untuk melihat status 'Hari ini' yang paling terkini.**
 
 ---
 
