@@ -31,7 +31,7 @@ include 'env.php';
 
                     
                     <p class="font-sans text-2xl font-bold m-4 mb-6 text-center">
-                        Jumlah server yang aktif saat ini (selama 1 jam kebelakang):
+                        Jumlah server yang aktif saat ini (1 jam terakhir):
                     </p>
                 
 
