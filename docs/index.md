@@ -107,7 +107,21 @@ Kami menggunakan JQuery untuk mempermudah pengoperasian fungsi-fungsi javascript
 
 #### Tailwind CSS
 
-Tailwind adalah sebuah framework CSS yang dapat membantu pembuatan antarmuka dengan cepat, namun tetap fleksible.
+Tailwind adalah sebuah framework CSS yang dapat membantu pembuatan antarmuka website dengan cepat, namun bukan merupakan sebuah template, sehingga tetap fleksible.  
+
+Tailwind menyediakan class-class yang dapat digunakan secara langsung di inline html sehingga kita tidak perlu membuat file style.css sendiri.
+
+**Penginstallan Tailwind CSS**
+
+Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-output file .css yang berisi konfigurasi semua class yang kita gunakan di dalam file html tersebut. Penginstallannya mudah.
+
+buka terminal di folder root, ketikkan command berikut,
+
+```
+./tailwindcss
+```
+
+Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwindcss.com/docs/)
 
 ---
 Under construction.
