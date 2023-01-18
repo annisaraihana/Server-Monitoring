@@ -1,6 +1,9 @@
 # Sardjito Server Monitoring
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
-untuk pengembangan selanjutnya.
+untuk pengembangan selanjutnya.  
+  
+Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui link http://10.100.254.116/monitoring/ 
+
 ## Daftar isi
 - [Untuk pengguna](#untuk-pengguna)
   - [Melihat jumlah server yang sedang aktif saat ini](#melihat-jumlah-server-yang-sedang-aktif-saat-ini)
