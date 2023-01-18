@@ -6,7 +6,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link href="output.css" rel="stylesheet">
         
 
     </head>
@@ -18,11 +18,13 @@
                 <h1 class="text-center font-sans text-2xl font-bold m-4 mb-2">
                     Grafik Status Tiap Server
                 </h1>
-                <div class="columns-3 ml-8 mb-8">
-                    <p class="font-sans font-bold">
+                <div class="ml-8 mb-8">
+                    <span class="font-sans font-bold">
                         Pilih tanggal, tunggu beberapa saat : 
-                    </p>
+                    </span>
+                    <div>
                     <input type="date" id="dateInput"/>
+                    </div>
                     <!--
                     <button class="text-center text-white font-sans bg-red-500 hover:bg-red-700 ml-4 p-2 rounded" id="Refresh">
                         Clear Data  
