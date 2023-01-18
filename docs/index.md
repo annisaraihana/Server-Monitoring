@@ -76,4 +76,29 @@ Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, den
 ---
 
 ## Untuk Pengembang
+
+Jikalau aplikasi ini ingin dikembangkan lebih lanjut, berikut penjelasan mengenai source code dan dependencies aplikasi ini yang sekiranya dapat membantu.
+
+---
+
+### Dependencies
+
+Aplikasi ini menggunakan pure php tanpa framework maupun package manajer apapun. Langkah-langkah mempersiapkan environment development nya dapat dilihat dalam [README](https://github.com/annisaraihana/Server-Monitoring#--server-monitoring-isirs-sardjito) di halaman depan. Meski begitu, ada beberapa library yang kami gunakan dalam pengembangannya.
+
+
+
+#### Chart.js
+
+Aplikasi ini menggunakan library javascript bernama **Chart.js** dalam men-generate grafik-grafik yang ada. Versi Chart.js yang kami gunakan adalah versi yang outdated, yaitu 2.7.2. Ini dikarenakan salah satu plugin yang membantu menampilkan jumlah persentase hanya berfungsi di versi itu. Untuk dokumentasi Chart.js versi 2.7.2, dapat dilihat [di sini.](https://www.chartjs.org/docs/2.7.2/)
+
+#### JQuery
+
+Kami menggunakan JQuery untuk mempermudah pengoperasian fungsi-fungsi javascript dan pengambilan data dari database.
+
+#### Tailwind CSS
+
+Tailwind adalah sebuah framework CSS yang dapat membantu pembuatan antarmuka dengan cepat, namun tetap fleksible.
+
+---
 Under construction.
+
