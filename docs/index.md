@@ -17,7 +17,10 @@ Berikut apa saja yang bisa anda lakukan dengan aplikasi web ini.
 
 ### Melihat jumlah server yang sedang aktif saat ini
 
-Di halaman utama, sebuah grafik akan terus mengambil data log terkini mengenai jumlah server yang memiliki status aktif (atau status "1" di dalam log) selama 1 jam terakhir. Grafik akan otomatis terupdate setiap 10 detik. Anda bisa mendekatkan kursor ke setiap bar untuk melihat jumlah server yang aktif pada waktu tertentu.
+Di halaman utama, sebuah grafik akan terus mengambil data log terkini mengenai jumlah server yang memiliki status aktif (atau status "1" di dalam log) selama 1 jam terakhir. Grafik akan otomatis terupdate setiap 10 detik. Anda bisa mendekatkan kursor ke setiap bar untuk melihat jumlah server yang aktif pada waktu tertentu.  
+
+![jumlah-server-aktif](https://user-images.githubusercontent.com/72925939/213085772-097d4af0-d56e-42a0-8d6f-3a45a1ece566.jpg)
+
 
 ---
 
@@ -31,7 +34,9 @@ Setelah suatu tanggal dipilih, aplikasi akan secara otomatis mulai memuat grafik
 **Penting untuk membiarkan semua grafik selesai memuat sebelum memilih tanggal baru.**  
   
 Setiap grafik hanya menunjukkan keberadaan status sebuah server sebagai "0" atau "1". **Untuk melihat kapan server mengalami down**, dapat mendekatkan kursor ke titik dimana grafik mengalami penurunan. Anda akan melihat timestamp persis dimana status "0" itu terekam.  
-  
+
+![kapan-server-down](https://user-images.githubusercontent.com/72925939/213085109-96b8a355-919a-4496-955b-dbc80194efb4.jpg)
+
 Selain melihat status server hari ini, Anda juga dapat melihat status server di hari-hari sebelumnya.  
   
 Tanggal yang menunjuk hari di masa depan hanya akan memuat grafik yang kosong.  
@@ -46,9 +51,9 @@ Tombol "Monthly Performance" dan "Yearly performance" memiliki fungsi yang relat
   
 Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, dengan kata lain, seberapa sering sebuah server tersebut memiliki status aktif.  
   
-Jika ingin melihat performa suatu server dalam setahun, pergi ke halaman Yearly Performance dan pilih "Performa Tahun ini" atau "Performa Tahun lalu", sesuai dengan informasi yang ingin Anda lihat, lalu temukan nama server yang Anda cari.
+**Jika ingin melihat performa suatu server dalam setahun,** pergi ke halaman Yearly Performance dan pilih "Performa Tahun ini" atau "Performa Tahun lalu", lalu temukan nama server yang Anda inginkan.
 
-Jika ingin melihat kapan saja sebuah server paling sering mengalami down, pergi ke Monthly Performance dan pilih salah satu server di dalam kolom. Klik tombol "Tahun ini" atau "Tahun lalu" sesuai dengan informasi yang Anda cari. Aplikasi akan menampilkan grafik performa server itu tiap bulannya, dan termasuk bulan yang memiliki angka persentase paling kecil. 
+**Jika ingin melihat kapan saja sebuah server paling sering mengalami down,** pergi ke Monthly Performance dan pilih salah satu server di dalam kolom. Klik tombol "Tahun ini" atau "Tahun lalu" sesuai dengan informasi yang Anda cari. Aplikasi akan menampilkan grafik performa server itu tiap bulannya, termasuk bulan yang memiliki angka persentase paling kecil. 
 
 ---
 
