@@ -111,9 +111,9 @@ Tailwind adalah sebuah framework CSS yang dapat membantu pembuatan antarmuka web
 
 Tailwind menyediakan class-class yang dapat digunakan secara langsung di inline html sehingga kita tidak perlu membuat file style.css sendiri.
 
-**Penginstallan Tailwind CSS**
+- **Penginstallan Tailwind CSS**
 
-Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-output file .css yang berisi konfigurasi semua class yang kita gunakan di dalam file html tersebut. Penginstallannya tanpa melalui package manager pun cukup mudah.
+Tailwind.exe mengetrack setiap perubahan file html dan secara otomatis meng-output file .css yang berisi konfigurasi semua class yang kita gunakan di dalam file html tersebut. Penginstallannya tanpa menggunakan package manager pun cukup mudah.
 
 buka terminal di folder root, ketikkan command-command berikut,
 
