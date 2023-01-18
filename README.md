@@ -48,5 +48,7 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
 - root                 # berisi index.php dan sub-pages lainnya
   └── css              # berisi file-file .css
   └── data             # berisi file-file .php controllers yang mengambil data dari database.
+  └── docs             # berisi file dokumentasi projek.
+  └── images           # berisi file gambar yang digunakan di antarmuka.
   └── js               # berisi libraries dan file .js yang menampilkan data di halaman. 
 ```
