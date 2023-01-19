@@ -5,36 +5,36 @@ function ServerPercentageCurrentYear() {
     var ServiceDesc = [];
     
 
-    $.post("data/GetServiceNames_data.php", function(data)
+    $.post("data/GetServiceNames_data.php", function(data) //mengambil nama-nama dan id server
     {
         console.log(data);
-        
+        //memasukkan json ke array
         for (let i in data) {
             ServiceId.push(data[i].ServiceId);
             ServiceName.push(data[i].ServiceName);
             ServiceDesc.push(data[i].ServiceDesc);
         }
 
-        for (let i = 0; i < ServiceId.length; i++){
+        for (let i = 0; i < ServiceId.length; i++){ //iterasi untuk setiap server
 
-            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, //menunjuk ke fungsi php yang mengambil data dari db
                 function (data)
                 {
                     console.log(data);
 
                     var active = [];
                     var inactive = [];
-
+                    //memasukkan json ke array
                     for (let i in data) {
                         active.push(data[i].ActiveCount);
                         inactive.push(data[i].InactiveCount);
                     }
-
+                    //configurasi chart
                     var chartdata = {
-                        labels: ["active","inactive"],
+                        labels: ["active","inactive"], //label bagian-bagian doughnut
                         datasets: [
                             {
-                                data: [active,inactive],
+                                data: [active,inactive], //data yang ditampilkan di doughnut chart
                                 backgroundColor: [
                                     'rgba(52, 211, 153, 0.7)',
                                     'rgba(253, 224, 71, 0.7)',
@@ -50,6 +50,7 @@ function ServerPercentageCurrentYear() {
                         ]
                     };
 
+                    //untuk men-delete canvas dulu setiap akan mengganti graph
                     $("#Server"+ServiceId[i]+"Percentage").remove(); 
                     $("#Server"+ServiceId[i]).append("<canvas id=Server"+ServiceId[i]+"Percentage></canvas>");
                     
@@ -65,9 +66,10 @@ function ServerPercentageCurrentYear() {
                         text: ServiceDesc[i]
                         },
                         plugins: {
-                            doughnutlabel: {
+                            doughnutlabel: { //plugin chart js
                                 labels: [
                                 {
+                                    //tulisan jumlah persen di tengah-tengah grafik
                                     text: (parseInt(active)*100/(parseInt(active)+parseInt(inactive))).toFixed(3)+'%',
                                     font: {
                                     size: '20'

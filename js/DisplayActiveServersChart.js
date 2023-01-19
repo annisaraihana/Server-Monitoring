@@ -2,28 +2,20 @@ var barGraph;
 
 function ActiveServersBarChart() {
     {   
-        /*
-        var containerDiv = document.getElementById('active-server-chart-container');
-        var oldcanv = document.getElementById('ActiveServersGraph');
-        containerDiv.removeChild(oldcanv)
-
-        var canv = document.createElement('canvas');
-        canv.id = 'ActiveServersGraph';
-        containerDiv.appendChild(canv);
-        */
-
-        $.post("data/ActiveServers_data.php",
+        $.post("data/ActiveServers_data.php", //menunjuk ke fungsi php yang mengambil data dari db
         function (data)
         {
             console.log(data);
             var Timestamp = [];
             var ActiveServers = [];
+            //memasukkan json ke array
             for (var i in data) {
                 Timestamp.push(data[i].Timestamp);
                 ActiveServers.push(data[i].ActiveServers);
             }
+            //configurasi chart
             var chartdata = {
-                labels: Timestamp,
+                labels: Timestamp, //label-label axis-x
                 datasets: [
                     {
                         label: 'Active Servers',
@@ -31,13 +23,13 @@ function ActiveServersBarChart() {
                         borderColor: 'rgb(103, 161, 118)',
                         hoverBackgroundColor: '#CCCCCC',
                         hoverBorderColor: '#666666',
-                        data: ActiveServers,
+                        data: ActiveServers, //data yang ditampilkan
                         borderWidth: 1
                     }
                 ]
             };
             var graphTarget = $("#ActiveServersGraph");
-            if (!barGraph){
+            if (!barGraph){ //jika graph belum ada, buat baru
                 barGraph = new Chart(graphTarget, {
                     type: 'bar',
                     data: chartdata,    
@@ -55,7 +47,7 @@ function ActiveServersBarChart() {
                     borderWidth: 1
                 });
             }
-            else {
+            else { //jika graph sudah ada, destroy yang sebelumnya dulu
                 barGraph.destroy();
                 barGraph = new Chart(graphTarget, {
                     type: 'bar',
