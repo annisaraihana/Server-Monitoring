@@ -6,7 +6,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="output.css" rel="stylesheet">
+        <link href="css/output.css" rel="stylesheet">
         
 
     </head>
@@ -144,6 +144,7 @@
 
         });
 
+        //script toggle buttons
         $("#options button").click(function(e) { 
                 document.getElementById('LabelTahun').innerHTML = "";
                 var isActive = $(this).hasClass('bg-black');
@@ -154,6 +155,7 @@
                 
             });
 
+        //Supaya tahun terus terupdate di judul
         const d = new Date();
         document.getElementById("CurrentYear").innerHTML = "Performa tahun ini (" + d.getFullYear() + ")";
         document.getElementById("LastYear").innerHTML = "Performa tahun lalu (" + (d.getFullYear()-1) + ")"

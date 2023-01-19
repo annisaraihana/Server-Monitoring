@@ -6,7 +6,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="output.css" rel="stylesheet">
+        <link href="css/output.css" rel="stylesheet">
         
 
     </head>
@@ -159,7 +159,8 @@
                 location.reload();
             });
             */
-               
+            
+            //script untuk mendapatkan input tanggal dan menampilkan data dan grafiknya
             document.getElementById("dateInput").addEventListener("change", function() {
                 input = this.value;
                 dateEntered = new Date(input);
@@ -169,21 +170,12 @@
 
         });
 
+        //untuk debugging
         function PrintDate(date, desc){
             console.log(date); 
             console.log(desc);
         }
 
-
-        
-/*
-        function selesai() {
-            setTimeout(function() {
-                ServerStatusesLineCharts();
-                selesai();
-            }, 200);
-        }
-*/
         </script>
 
 

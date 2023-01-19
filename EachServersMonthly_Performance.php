@@ -6,7 +6,7 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="output.css" rel="stylesheet">
+        <link href="css/output.css" rel="stylesheet">
         
 
     </head>
@@ -72,10 +72,10 @@
     <script>
 
         $(document).ready(function (){
-            DisplayServersOptions();
+            DisplayServersOptions(); //mengambil nama-nama server dan menampilkannya di dropdown menu
             var input;
             document.getElementById("ServersSelect").addEventListener("change", function() {
-                input = this.value;
+                input = this.value; //input berupa ServiceId
                 console.log(input);
                 document.getElementById('BulanTahunini').onclick=function(){
                     DisplayServerAllMonthCuryear(input);
@@ -86,6 +86,7 @@
             });
         });
 
+        //script toggle buttons
         $("#BulanTahunini, #BulanTahunLalu").click(function(e) { 
                 var isActive = $(this).hasClass('bg-black');
                 $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
@@ -102,6 +103,8 @@
    
 
     <script>
+        //mengambil nama-nama server dan menampilkannya di dropdown menu
+        //men-generate elemen <option> dengan value = serviceId
         function DisplayServersOptions(){
 
             var ServiceId = [];

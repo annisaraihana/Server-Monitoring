@@ -10,7 +10,7 @@ include 'env.php';
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/Chart.min.js"></script>
         <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="output.css" rel="stylesheet">
+        <link href="css/output.css" rel="stylesheet">
         
 
     </head>
@@ -64,7 +64,7 @@ include 'env.php';
         </div>
 
 
-    <!-- Javascript sementara-->
+    <!-- Javascript-->
     <!-- script untuk menampilkan graphs-->
     <script>
         $(document).ready(function (){
@@ -73,7 +73,7 @@ include 'env.php';
         });
 
 
-
+        //script untuk membuat tombol sub-pages jadi hitam saat aktif
         $("#options button").click(function(e) { 
                 var isActive = $(this).hasClass('bg-black');
                 $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
@@ -82,17 +82,15 @@ include 'env.php';
                 }
                 
             });
-
+        
+        //script untuk menampilkan sub-pages, dengan mengganti atribut object GraphsContainer menjadi link page yang sesuai
         document.getElementById('ServerStatuses').onclick=function(){
-        // Remove any element-specific value, falling back to stylesheets
             document.getElementById('GraphsContainer').setAttribute('data','Server_Statuses.php')
         };
         document.getElementById('MonthlyPerformance').onclick=function(){
-        // Remove any element-specific value, falling back to stylesheets
             document.getElementById('GraphsContainer').setAttribute('data','EachServersMonthly_Performance.php')
         };
         document.getElementById('YearlyPerformance').onclick=function(){
-        // Remove any element-specific value, falling back to stylesheets
             document.getElementById('GraphsContainer').setAttribute('data','Yearly_Performance.php')
         };
 
