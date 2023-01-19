@@ -97,7 +97,7 @@ Aplikasi ini menggunakan library javascript bernama **Chart.js** dalam men-gener
 
 #### JQuery
 
-Kami menggunakan JQuery untuk mempermudah pengoperasian fungsi-fungsi javascript dan pengambilan data dari database.
+Kami menggunakan JQuery untuk mempermudah pengoperasian fungsi-fungsi javascript dan pengambilan data dari database. Dokumentasi JQuery ada [di sini.](https://api.jquery.com/)
 
 #### Tailwind CSS
 
@@ -116,10 +116,10 @@ buka terminal di folder root, ketikkan command-command berikut,
 ./tailwindcss init
 
 # Untuk memulai sebuah watcher yang akan mengetrack secara otomatis 
-./tailwindcss -i input.css -o output.css --watch
+./tailwindcss -i css/input.css -o css/output.css --watch
 
-# jika ingin meng Compile and minify CSS nya
-./tailwindcss -i input.css -o output.css --minify
+# jika hanya ingin meng Compile and minify CSS nya
+./tailwindcss -i css/input.css -o css/output.css --minify
 ```
 
 Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwindcss.com/docs/)
