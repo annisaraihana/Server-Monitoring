@@ -52,3 +52,6 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
   └── images           # berisi file gambar yang digunakan di antarmuka.
   └── js               # berisi libraries dan file .js yang menampilkan data di halaman. 
 ```
+
+### Dokumentasi lebih lanjut
+Silahkan pergi ke [docs.](https://github.com/annisaraihana/Server-Monitoring/blob/main/docs/index.md)
