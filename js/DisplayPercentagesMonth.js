@@ -1,4 +1,4 @@
-function ServerPercentageCurrentMonth() {
+function ServerPercentageCurrentMonth() { //FUNGSI SUDAH TIDAK DIPAKAI LAGI
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
