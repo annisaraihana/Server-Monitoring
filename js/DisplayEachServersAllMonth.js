@@ -9,7 +9,7 @@ function DisplayServerAllMonthCuryear(ServiceId) {
 
     for (let i = 0; i < MonthId.length; i++){ //iterasi untuk setiap bulan
 
-        $.post("data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, //menunjuk ke fungsi php yang mengambil data dari db
+        $.post("../data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, //menunjuk ke fungsi php yang mengambil data dari db
             function (data)
             {
                 console.log(data);
@@ -94,7 +94,7 @@ function DisplayServerAllMonthPrevyear(ServiceId) {
 
     for (let i = 0; i < MonthId.length; i++){
 
-        $.post("data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, 
+        $.post("../data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, 
             function (data)
             {
                 console.log(data);

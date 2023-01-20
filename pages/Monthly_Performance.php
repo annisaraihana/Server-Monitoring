@@ -3,10 +3,10 @@
     <head>
         <title>Monthly Performance</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
         
 
     </head>
@@ -133,7 +133,7 @@
         document.getElementById("TitleBulan").innerHTML = "Performa bulan ini (" + monthNames[d.getMonth()] + " " + d.getFullYear() + ")";
 
         </script>
-         <script type="text/javascript" src="js\DisplayPercentagesMonth.js" charset="utf-8"></script>
+         <script type="text/javascript" src="../js\DisplayPercentagesMonth.js" charset="utf-8"></script>
    
 
     <script>

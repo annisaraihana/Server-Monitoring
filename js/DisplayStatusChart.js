@@ -6,7 +6,7 @@ function ServerStatusesLineCharts(input) {
     var ServiceDesc = [];
     
 
-    $.post("data/GetServiceNames_data.php", function(data) //mengambil nama-nama dan id server
+    $.post("../data/GetServiceNames_data.php", function(data) //mengambil nama-nama dan id server
     {
         console.log(data);
         //memasukkan json ke array    
@@ -18,7 +18,7 @@ function ServerStatusesLineCharts(input) {
 
         for (let i = 0; i < ServiceId.length; i++){ //iterasi untuk setiap server
 
-            $.post("data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i], 'Timestamp': input }, //menunjuk ke fungsi php yang mengambil data dari db
+            $.post("../data/ServerStatuses_data.php", { 'ServiceId': ServiceId[i], 'Timestamp': input }, //menunjuk ke fungsi php yang mengambil data dari db
                 function (data)
                 {
                     console.log(data);

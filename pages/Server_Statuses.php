@@ -3,10 +3,10 @@
     <head>
         <title>Server Statuses</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
         
 
     </head>
@@ -180,5 +180,5 @@
 
 
    
-        <script type="text/javascript" src="js\DisplayStatusChart.js" charset="utf-8"></script>   
+        <script type="text/javascript" src="../js\DisplayStatusChart.js" charset="utf-8"></script>   
     </body>

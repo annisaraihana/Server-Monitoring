@@ -4,7 +4,7 @@ function ServerPercentageCurrentMonth() { //FUNGSI SUDAH TIDAK DIPAKAI LAGI
     var ServiceDesc = [];
     
 
-    $.post("data/GetServiceNames_data.php", function(data)
+    $.post("../data/GetServiceNames_data.php", function(data)
     {
         console.log(data);
         
@@ -16,7 +16,7 @@ function ServerPercentageCurrentMonth() { //FUNGSI SUDAH TIDAK DIPAKAI LAGI
 
         for (let i = 0; i < ServiceId.length; i++){
 
-            $.post("data/ServerPercentage_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("../data/ServerPercentage_data.php", { 'ServiceId': ServiceId[i] }, 
                 function (data)
                 {
                     console.log(data);

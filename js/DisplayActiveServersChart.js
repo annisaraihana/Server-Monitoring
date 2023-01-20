@@ -2,7 +2,7 @@ var barGraph;
 
 function ActiveServersBarChart() {
     {   
-        $.post("data/ActiveServers_data.php", //menunjuk ke fungsi php yang mengambil data dari db
+        $.post("../data/ActiveServers_data.php", //menunjuk ke fungsi php yang mengambil data dari db
         function (data)
         {
             console.log(data);

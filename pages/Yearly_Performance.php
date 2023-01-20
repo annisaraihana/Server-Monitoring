@@ -3,10 +3,10 @@
     <head>
         <title>Yearly Performance</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
         
 
     </head>
@@ -161,7 +161,7 @@
         document.getElementById("LastYear").innerHTML = "Performa tahun lalu (" + (d.getFullYear()-1) + ")"
 
         </script>
-        <script type="text/javascript" src="js\DisplayPercentagesYear.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../js\DisplayPercentagesYear.js" charset="utf-8"></script>
 
 
     <script>
