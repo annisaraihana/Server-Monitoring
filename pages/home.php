@@ -1,5 +1,14 @@
 <?php include '../autoload.php';
 include '../env.php';
+
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +29,7 @@ include '../env.php';
     <!-- HTML body-->
         <header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
+            <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
         </header>
 
         <div class="bg-green-100">
