@@ -36,7 +36,7 @@
                     </label>
                     <input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="email" name="email" placeholder="Email" id="email" required>
 
-					<input class="w-full p-[15px] bg-green-700 text-white" type="submit" value="Register">
+					<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" value="Register">
 				</form>
 			</div>
 		</div>
