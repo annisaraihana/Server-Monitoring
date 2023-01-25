@@ -27,13 +27,15 @@ if (!isset($_SESSION['loggedin'])) {
     <body class="bg-green-100">
 
     <!-- HTML body-->
-        <header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
+        <header class="w-full h-20" style="border-top: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
-            <a href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <div class="bg-black w-full h-[25px] mt-[3px]"> 
+                <a class="font-sans font-bold text-white float-right pr-[10px]" href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </div>
         </header>
 
         <div class="bg-green-100">
-            <div class="my-8 mx-4 rounded-xl p-6 bg-amber-100">
+            <div class="mt-14 mb-8 mx-4 rounded-xl p-6 bg-amber-100">
                 <div class="bg-white rounded w-3/6 m-auto">
                     <div class="m-auto text-white bg-green-500 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
