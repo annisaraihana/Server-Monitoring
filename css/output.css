@@ -687,6 +687,10 @@ video {
   margin-top: 3rem;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
