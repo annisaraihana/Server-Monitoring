@@ -19,15 +19,24 @@ if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['emai
 }
 
 if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
-    exit('Username is not valid!');
+    exit('<script type="text/javascript">
+			alert("Username tidak valid!");
+			window.location = "../pages/AccountRegister.php";
+			</script>');
 }
 
 if (strlen($_POST['password']) > 20 || strlen($_POST['password']) < 5) {
-	exit('Password must be between 5 and 20 characters long!');
+	exit('<script type="text/javascript">
+			alert("Password harus sepanjang 5 sampai 20 karakter!");
+			window.location = "../pages/AccountRegister.php";
+			</script>');
 }
 
 if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-	exit('Email is not valid!');
+	exit('<script type="text/javascript">
+			alert("Email tidak valid!");
+			window.location = "../pages/AccountRegister.php";
+			</script>"');
 }
 
 // We need to check if the account with that username exists.
@@ -39,7 +48,10 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 	// Store the result so we can check if the account exists in the database.
 	if ($stmt->num_rows > 0) {
 		// Username already exists
-		echo 'Username exists, please choose another!';
+		echo '<script type="text/javascript">
+				alert("Username sudah ada, mohon gunakan yang lain!");
+				window.location = "../pages/AccountRegister.php";
+			</script>';
 	} else {
 		// Insert new account
         if ($stmt = $con->prepare('INSERT INTO accounts (username, password, email) VALUES (?, ?, ?)')) {
