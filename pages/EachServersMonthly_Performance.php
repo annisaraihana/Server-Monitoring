@@ -87,16 +87,29 @@ if (!isset($_SESSION['loggedin'])) {
         $(document).ready(function (){
             DisplayServersOptions(); //mengambil nama-nama server dan menampilkannya di dropdown menu
             var input;
+           
+            //me-load grafik grafik server
             document.getElementById("ServersSelect").addEventListener("change", function() {
                 input = this.value; //input berupa ServiceId
                 console.log(input);
-                document.getElementById('BulanTahunini').onclick=function(){
-                    DisplayServerAllMonthCuryear(input);
-                };
-                document.getElementById('BulanTahunLalu').onclick=function(){
-                    DisplayServerAllMonthPrevyear(input);
-                };
             });
+            
+            document.getElementById('BulanTahunini').onclick=function(){
+                if (input == null || input == 0) {
+                    alert('Pilih salah satu server terlebih dahulu.')
+                }
+                else {
+                    DisplayServerAllMonthCuryear(input);
+                }
+            };
+                document.getElementById('BulanTahunLalu').onclick=function(){
+                if (input == null || input == 0) {
+                    alert('Pilih salah satu server terlebih dahulu.')
+                }
+                else{
+                    DisplayServerAllMonthPrevyear(input);
+                }
+            };
         });
 
         //script toggle buttons
