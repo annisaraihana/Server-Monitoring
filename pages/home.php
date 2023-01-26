@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
         <header class="w-full h-20" style="border-top: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
             <div class="bg-black w-full h-[25px] mt-[3px]"> 
-                <a class="font-sans font-bold text-white float-right pr-[10px]" href="../auth/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a class="font-sans font-bold text-white float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
             </div>
         </header>
 
