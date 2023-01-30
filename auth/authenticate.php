@@ -4,45 +4,45 @@ include '../env.php';
 include '../autoload.php';
 
 session_start();
-// Try and connect using the env variables
+// Mencoba connect ke database dengan env variables
 $con = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'),env('DB_NAME'));
 if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
+	// Jika terdapat error pada koneksi, stop script dan tampilkan error
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 
-// Now we check if the data from the login form was submitted, isset() will check if the data exists.
+// Cek apakah data sudah ter submit, fungsi isset() akan mengecek apakah data sudah ada
 if ( !isset($_POST['username'], $_POST['password']) ) {
-	// Could not get the data that should have been sent.
+	// Tidak dapat memperoleh data yang seharusnya terkirim
 	exit('Please fill both the username and password fields!');
 }
 
-// Prepare our SQL, preparing the SQL statement will prevent SQL injection.
+// Siapkan SQL, menyiapkan SQL statement akan mencegah adanya SQL injection
 if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
-	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
+	// Bind parameters (s = string, i = int, b = blob, etc), username berupa string maka gunakan "s"
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
-	// Store the result so we can check if the account exists in the database.
+	// Simpan result sehingga kita dapat mengecek apakah akun terdapat di database
 	$stmt->store_result();
     if ($stmt->num_rows > 0) {
         $stmt->bind_result($id, $password);
         $stmt->fetch();
-        // Account exists, now we verify the password.
-        // Note: remember to use password_hash in your registration file to store the hashed passwords.
+        // Akun sudah ada, lanjutkan dengan verifikasi password
+        // Note: ingat untuk menggunakan password_hash pada registration file untuk menyimpan hashed passwords
         if (password_verify($_POST['password'], $password)) {
-            // Verification success! User has logged-in!
-            // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
+            // Verifikasi berhasil! User telah login!
+            // Membuat sessions, sehingga kita dapat mengetahui bahwa user telah login, hal ini bekerja seperti cookies tetapi mengingat data pada server
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
             header('Location: ../pages/home.php');
         } else {
-            // Incorrect password
+            // Password salah
             echo 'Incorrect username and/or password!';
         }
     } else {
-        // Incorrect username
+        // Username salah
         echo 'Incorrect username and/or password!';
     }
 
