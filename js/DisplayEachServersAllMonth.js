@@ -1,5 +1,8 @@
 function DisplayServerAllMonthCuryear(ServiceId) {
 
+     //menampilkan tulisan loading
+     document.getElementById("loadingDiv").style.display = ""
+
     var MonthId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
@@ -76,6 +79,10 @@ function DisplayServerAllMonthCuryear(ServiceId) {
                     }
                 }
             });
+
+            //menghilangkan div loading
+            setTimeout(removeLoader, 2000);
+
             });
 
     }
@@ -84,6 +91,9 @@ function DisplayServerAllMonthCuryear(ServiceId) {
 
 //copy paste fungsi diatas untuk menampilkan data tahun sebelumnya
 function DisplayServerAllMonthPrevyear(ServiceId) { 
+
+    //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
 
     var MonthId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -159,8 +169,19 @@ function DisplayServerAllMonthPrevyear(ServiceId) {
                     }
                 }
             });
+
+                //menghilangkan div loading
+                setTimeout(removeLoader, 2000);
+
             });
 
     }
     
+}
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      // fadeOut complete. Remove the loading div
+      $( "#loadingDiv" ).css('display','none');
+  });  
 }

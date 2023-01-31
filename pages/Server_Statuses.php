@@ -20,6 +20,7 @@ if (!isset($_SESSION['loggedin'])) {
         <script type="text/javascript" src="../js/Chart.min.js"></script>
         <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
         <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -53,7 +54,8 @@ if (!isset($_SESSION['loggedin'])) {
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-48" id="small-chart-box">
 
-
+        <!-- tulisan loading-->
+        <div style="display:none" id="loadingDiv"> <div class="loader text-center text-white font-bold mt-[25%] text-2xl">Loading...</div> </div>
 
             <div id="Server001" class="small-chart-container">
                 <canvas id="Server001Graph"></canvas>

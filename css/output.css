@@ -649,8 +649,8 @@ video {
   margin-right: 5rem;
 }
 
-.table {
-  display: table;
+.mt-\[25\%\] {
+  margin-top: 25%;
 }
 
 .grid {

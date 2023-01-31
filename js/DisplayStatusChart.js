@@ -1,4 +1,7 @@
 function ServerStatusesLineCharts(input) {
+
+    //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
     
     console.log(input);
     var ServiceId = [];
@@ -65,5 +68,15 @@ function ServerStatusesLineCharts(input) {
 
         }
 
+        //menghilangkan div loading
+        setTimeout(removeLoader, 10000);        
+
     });
+}
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      // fadeOut complete. Remove the loading div
+      $( "#loadingDiv" ).css('display','none');
+  });  
 }

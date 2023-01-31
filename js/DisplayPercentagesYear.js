@@ -1,4 +1,7 @@
 function ServerPercentageCurrentYear() {
+
+     //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
     
     var ServiceId = [];
     var ServiceName = [];
@@ -86,11 +89,17 @@ function ServerPercentageCurrentYear() {
 
         }
 
+        //menghilangkan div loading
+        setTimeout(removeLoader, 10000);
+
     });
 
 }
 
 function ServerPercentagePrevYear() {
+
+    //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
     
     var ServiceId = [];
     var ServiceName = [];
@@ -176,6 +185,16 @@ function ServerPercentagePrevYear() {
 
         }
 
+        //menghilangkan div loading
+        setTimeout(removeLoader, 10000);
+
     });
 
+}
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      // fadeOut complete. Remove the loading div
+      $( "#loadingDiv" ).css('display','none');
+  });  
 }
