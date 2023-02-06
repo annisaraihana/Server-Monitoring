@@ -1,5 +1,13 @@
-<?php include 'autoload.php';
-include 'env.php';
+<?php include '../autoload.php';
+include '../env.php';
+
+session_start();
+// Jika user belum login maka redirect ke login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -7,10 +15,10 @@ include 'env.php';
     <head>
         <title>Servers Monitoring Dashboard</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
         
 
     </head>
@@ -18,12 +26,15 @@ include 'env.php';
     <body class="bg-green-100">
 
     <!-- HTML body-->
-        <header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(images/bg_header_2017.png), url(images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
+        <header class="w-full h-20" style="border-top: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
+            <div class="bg-black w-full h-[25px] mt-[3px]"> 
+                <a class="font-sans font-bold text-white float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
+            </div>
         </header>
 
         <div class="bg-green-100">
-            <div class="my-8 mx-4 rounded-xl p-6 bg-amber-100">
+            <div class="mt-14 mb-8 mx-4 rounded-xl p-6 bg-amber-100">
                 <div class="bg-white rounded w-3/6 m-auto">
                     <div class="m-auto text-white bg-green-500 rounded">
                         <p class="font-sans font-bold m-4 mb-6">OVERVIEW</p>
@@ -97,7 +108,7 @@ include 'env.php';
     </script>
 
 
-    <script type="text/javascript" src="js/DisplayActiveServersChart.js"></script>           
+    <script type="text/javascript" src="../js/DisplayActiveServersChart.js"></script>           
 
     </body>
     </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard | Register</title>
+        <!--link rel="stylesheet" href="css/style.css"-->
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
+        
+
+    </head>
+    
+    <body class="bg-green-100">
+		<header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
+            <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
+        </header>
+
+		<div class="container rounded-lg bg-white w-[600px] m-auto mt-[100px] border-t-[4px] border-b-[3px] border-l border-r border-green-700">
+			<div class="login container m-auto p-[20px]">
+				<h1 class="text-center font-bold text-[24px] text-green-900 pb-[15px] border-b">- REGISTER -</h1>
+				<form action="../auth/register.php" method="post" autocomplete="off">
+
+					<label class="font-bold text-green-900" for="Username">
+						<p class="mx-auto pt-[20px]"> Username </p>
+					</label>
+					<input class="w-full h-[50px] border rounded-lg mx-auto mb-[20px] pr-[15px] pl-[15px]" type="text" name="username" placeholder="Username" id="username" required>
+
+					<label class="font-bold text-green-900" for="Password">
+						<p class="mx-auto"> Password </p>
+					</label>
+					<input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="password" name="password" placeholder="Password" id="password" required>
+
+                    <label class="font-bold text-green-900" for="email">
+                        <p class="mx-auto"> Email </p>
+                    </label>
+                    <input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="email" name="email" placeholder="Email" id="email" required>
+
+					<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" value="Register">
+				</form>
+			</div>
+		</div>
+        
+    </body>
+</html>

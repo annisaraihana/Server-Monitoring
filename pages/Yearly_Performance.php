@@ -1,12 +1,25 @@
+<?php include '../autoload.php';
+include '../env.php';
+
+session_start();
+// Jika user belum login maka redirect ke login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Yearly Performance</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -29,6 +42,9 @@
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-20" id="small-chart-box">
+
+        <!--tulisan loading-->
+        <div style="display:none" id="loadingDiv"> <div class="loader text-center text-white font-bold mt-[25%] text-2xl">Loading...</div> </div>
             
                 <div id="Server001" class="small-chart-container">
                         <canvas id="Server001Percentage"></canvas>
@@ -161,7 +177,7 @@
         document.getElementById("LastYear").innerHTML = "Performa tahun lalu (" + (d.getFullYear()-1) + ")"
 
         </script>
-        <script type="text/javascript" src="js\DisplayPercentagesYear.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../js\DisplayPercentagesYear.js" charset="utf-8"></script>
 
 
     <script>

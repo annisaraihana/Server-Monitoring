@@ -1,11 +1,14 @@
 function ServerPercentageCurrentYear() {
+
+     //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
     
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
     
 
-    $.post("data/GetServiceNames_data.php", function(data) //mengambil nama-nama dan id server
+    $.post("../data/GetServiceNames_data.php", function(data) //mengambil nama-nama dan id server
     {
         console.log(data);
         //memasukkan json ke array
@@ -17,7 +20,7 @@ function ServerPercentageCurrentYear() {
 
         for (let i = 0; i < ServiceId.length; i++){ //iterasi untuk setiap server
 
-            $.post("data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, //menunjuk ke fungsi php yang mengambil data dari db
+            $.post("../data/ServerPercentageYearly_data.php", { 'ServiceId': ServiceId[i] }, //menunjuk ke fungsi php yang mengambil data dari db
                 function (data)
                 {
                     console.log(data);
@@ -86,18 +89,24 @@ function ServerPercentageCurrentYear() {
 
         }
 
+        //menghilangkan div loading
+        setTimeout(removeLoader, 10000);
+
     });
 
 }
 
 function ServerPercentagePrevYear() {
+
+    //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
     
     var ServiceId = [];
     var ServiceName = [];
     var ServiceDesc = [];
     
 
-    $.post("data/GetServiceNames_data.php", function(data)
+    $.post("../data/GetServiceNames_data.php", function(data)
     {
         console.log(data);
         
@@ -109,7 +118,7 @@ function ServerPercentagePrevYear() {
 
         for (let i = 0; i < ServiceId.length; i++){
 
-            $.post("data/ServerPercentagePrevYear_data.php", { 'ServiceId': ServiceId[i] }, 
+            $.post("../data/ServerPercentagePrevYear_data.php", { 'ServiceId': ServiceId[i] }, 
                 function (data)
                 {
                     console.log(data);
@@ -176,6 +185,16 @@ function ServerPercentagePrevYear() {
 
         }
 
+        //menghilangkan div loading
+        setTimeout(removeLoader, 10000);
+
     });
 
+}
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      // fadeOut complete. Remove the loading div
+      $( "#loadingDiv" ).css('display','none');
+  });  
 }

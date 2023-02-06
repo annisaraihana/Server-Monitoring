@@ -1,12 +1,25 @@
+<?php include '../autoload.php';
+include '../env.php';
+
+session_start();
+// Jika user belum login maka redirect ke login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Monthly Performance</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -28,6 +41,9 @@
             </div> 
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-40 " id="small-chart-box">
+
+            <!-- loading indicator-->
+            <div style="display:none" id="loadingDiv"> <div class="loader text-center text-white font-bold mt-[25%] text-2xl">Loading...</div> </div>
 
             <div id="Month1" class="small-chart-container">
                     <canvas id="Month1Graph"></canvas>
@@ -74,16 +90,29 @@
         $(document).ready(function (){
             DisplayServersOptions(); //mengambil nama-nama server dan menampilkannya di dropdown menu
             var input;
+           
+            //me-load grafik grafik server
             document.getElementById("ServersSelect").addEventListener("change", function() {
                 input = this.value; //input berupa ServiceId
                 console.log(input);
-                document.getElementById('BulanTahunini').onclick=function(){
-                    DisplayServerAllMonthCuryear(input);
-                };
-                document.getElementById('BulanTahunLalu').onclick=function(){
-                    DisplayServerAllMonthPrevyear(input);
-                };
             });
+            
+            document.getElementById('BulanTahunini').onclick=function(){
+                if (input == null || input == 0) {
+                    alert('Pilih salah satu server terlebih dahulu.')
+                }
+                else {
+                    DisplayServerAllMonthCuryear(input);
+                }
+            };
+                document.getElementById('BulanTahunLalu').onclick=function(){
+                if (input == null || input == 0) {
+                    alert('Pilih salah satu server terlebih dahulu.')
+                }
+                else{
+                    DisplayServerAllMonthPrevyear(input);
+                }
+            };
         });
 
         //script toggle buttons
@@ -99,7 +128,7 @@
         
     </script>
     
-    <script type="text/javascript" src="js\DisplayEachServersAllMonth.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../js\DisplayEachServersAllMonth.js" charset="utf-8"></script>
    
 
     <script>
@@ -111,7 +140,7 @@
             var ServiceName = [];
             var ServiceDesc = [];
 
-            $.post("data/GetServiceNames_data.php", function(data){
+            $.post("../data/GetServiceNames_data.php", function(data){
                 console.log(data);
                     
                     for (let i in data) {

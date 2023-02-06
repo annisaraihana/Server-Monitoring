@@ -1,5 +1,8 @@
 function DisplayServerAllMonthCuryear(ServiceId) {
 
+     //menampilkan tulisan loading
+     document.getElementById("loadingDiv").style.display = ""
+
     var MonthId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
         "Juli", "Agustus", "September", "Oktober", "November", "Desember"
@@ -9,7 +12,7 @@ function DisplayServerAllMonthCuryear(ServiceId) {
 
     for (let i = 0; i < MonthId.length; i++){ //iterasi untuk setiap bulan
 
-        $.post("data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, //menunjuk ke fungsi php yang mengambil data dari db
+        $.post("../data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, //menunjuk ke fungsi php yang mengambil data dari db
             function (data)
             {
                 console.log(data);
@@ -76,6 +79,10 @@ function DisplayServerAllMonthCuryear(ServiceId) {
                     }
                 }
             });
+
+            //menghilangkan div loading
+            setTimeout(removeLoader, 2000);
+
             });
 
     }
@@ -84,6 +91,9 @@ function DisplayServerAllMonthCuryear(ServiceId) {
 
 //copy paste fungsi diatas untuk menampilkan data tahun sebelumnya
 function DisplayServerAllMonthPrevyear(ServiceId) { 
+
+    //menampilkan tulisan loading
+    document.getElementById("loadingDiv").style.display = ""
 
     var MonthId = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -94,7 +104,7 @@ function DisplayServerAllMonthPrevyear(ServiceId) {
 
     for (let i = 0; i < MonthId.length; i++){
 
-        $.post("data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, 
+        $.post("../data/ServerPercentageAllMonth_data.php", { 'ServiceId': ServiceId, 'MonthId': MonthId[i], 'Year': Year }, 
             function (data)
             {
                 console.log(data);
@@ -159,8 +169,19 @@ function DisplayServerAllMonthPrevyear(ServiceId) {
                     }
                 }
             });
+
+                //menghilangkan div loading
+                setTimeout(removeLoader, 2000);
+
             });
 
     }
     
+}
+
+function removeLoader(){
+    $( "#loadingDiv" ).fadeOut(500, function() {
+      // fadeOut complete. Remove the loading div
+      $( "#loadingDiv" ).css('display','none');
+  });  
 }

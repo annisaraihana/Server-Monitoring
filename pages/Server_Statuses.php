@@ -1,12 +1,26 @@
+<?php include '../autoload.php';
+include '../env.php';
+
+// We need to use sessions, so you should always start sessions using the below code.
+session_start();
+// If the user is not logged in redirect to the login page...
+if (!isset($_SESSION['loggedin'])) {
+	header('Location: ../index.html');
+	exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Server Statuses</title>
         <!--link rel="stylesheet" href="css/style.css"-->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/Chart.min.js"></script>
-        <script type="text/javascript" src="js/chartjs-plugin-doughnutlabel.min.js"></script>
-        <link href="css/output.css" rel="stylesheet">
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/Chart.min.js"></script>
+        <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
+        <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -40,7 +54,8 @@
 
         <div class="grid grid-cols-4 gap-4 mx-4 my-48" id="small-chart-box">
 
-
+        <!-- tulisan loading-->
+        <div style="display:none" id="loadingDiv"> <div class="loader text-center text-white font-bold mt-[25%] text-2xl">Loading...</div> </div>
 
             <div id="Server001" class="small-chart-container">
                 <canvas id="Server001Graph"></canvas>
@@ -180,5 +195,5 @@
 
 
    
-        <script type="text/javascript" src="js\DisplayStatusChart.js" charset="utf-8"></script>   
+        <script type="text/javascript" src="../js\DisplayStatusChart.js" charset="utf-8"></script>   
     </body>
