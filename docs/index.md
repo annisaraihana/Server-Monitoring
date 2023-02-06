@@ -150,6 +150,8 @@ Untuk itu, file yang harus diubah adalah ketiga file ini.
 5. Karena belum ada mekanisme untuk otomatis mem-publish editan terbaru dari repository github ke server, maka Anda harus mengupload file-file terbaru secara manual, melalui FileZilla dan semacamnya.
 
 
+---
 
+Under construction.
 
 
