@@ -1,3 +1,7 @@
+* TOC  
+{:toc}
+
+
 # Sardjito Server Monitoring
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
 untuk pengembangan selanjutnya.  
