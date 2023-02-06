@@ -1,7 +1,3 @@
-* TOC  
-{:toc}
-
-
 # Sardjito Server Monitoring
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
 untuk pengembangan selanjutnya.  
@@ -9,12 +5,8 @@ untuk pengembangan selanjutnya.
 Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui link: [http://10.100.254.116/monitoring/](http://10.100.254.116/monitoring/ ) 
 
 ## Daftar isi
-- [Untuk pengguna](#untuk-pengguna)
-  - [Melihat jumlah server yang sedang aktif saat ini](#melihat-jumlah-server-yang-sedang-aktif-saat-ini)
-  - [Melihat kapan saja server mengalami down](#melihat-kapan-saja-server-mengalami-down)
-  - [Melihat performa sebuah server selama setahun](#melihat-performa-sebuah-server-selama-setahun-dan-pada-bulan-apa-server-paling-sering-mengalami-down)
-  - [Menyimpan grafik sebagai gambar](#menyimpan-grafik-sebagai-gambar)
-- [Untuk pengembang](#untuk-pengembang)
+* TOC  
+{:toc}
 
 ## Untuk Pengguna
 
