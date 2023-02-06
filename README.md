@@ -20,7 +20,7 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
 
 ### Setting Up Project
 
-- Import sql dummy data nya melalui SQL Workbench.
+- Import sql dummy data melalui SQL Workbench (hanya untuk internal).
 - Tambahkan file **env.php** di root folder, berisi:
 
   ```php
