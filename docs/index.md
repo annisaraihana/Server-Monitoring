@@ -125,5 +125,31 @@ buka terminal di folder root, ketikkan command-command berikut,
 Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwindcss.com/docs/)
 
 ---
-Under construction.
+
+### Jika ada penambahan service baru
+
+Jika ada penambahan server/service baru dan pengembang ingin menampilkan data log nya di website ini juga, maka berikut langkah-langkah yang perlu dilakukan.
+
+Tiap tombol tab di halaman utama memunculkan sub-pages tersendiri. 
+* Server Statuses -> pages\Server_Statuses.php
+* Monthly Performance -> pages\EachServersMonthly_Performance.php
+* Yearly Performance -> pages\Yearly_Performance.php
+
+Untuk itu, file yang harus diubah adalah ketiga file ini.
+
+1. Dalam file Server_Statuses.php, scroll down ke akhir runtutan div small-chart-container berikut, dan tambahkan element div dan canvas baru. Ganti angka dalam div id dan canvas id nya menjadi angka yang sesuai dengan idservice baru, biasanya increment 1 dari service sebelumnya.
+
+![image](https://user-images.githubusercontent.com/72925939/216922508-09e61aca-2bee-4c8b-9469-808fce21aea2.png)
+
+2. Dalam file EachServersMonthly_Performance.php, tidak perlu ada yang diganti. 
+
+3. Dalam file Yearly_Performance.php, lakukan hal yang sama seperti langkah 1. 
+![image](https://user-images.githubusercontent.com/72925939/216922413-9887f409-15e5-4fad-a7ce-192acac5a45f.png)
+
+4. Save dan commit.
+5. Karena belum ada mekanisme untuk otomatis mem-publish editan terbaru dari repository github ke server, maka Anda harus mengupload file-file terbaru secara manual, melalui FileZilla dan semacamnya.
+
+
+
+
 
