@@ -45,12 +45,14 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
 ### Folder Structure
 
 ```
-- root                 # berisi index.php dan sub-pages lainnya
+- root                 # berisi index.html, file env.php, dan utilitas lainnya
+  └── auth             # berisi script php yang mengatur login dan authorization
   └── css              # berisi file-file .css
-  └── data             # berisi file-file .php controllers yang mengambil data dari database.
+  └── data             # berisi script php berupa controllers yang mengambil data dari database.
   └── docs             # berisi file dokumentasi projek.
   └── images           # berisi file gambar yang digunakan di antarmuka.
-  └── js               # berisi libraries dan file .js yang menampilkan data di halaman. 
+  └── js               # berisi libraries dan script .js yang menampilkan data di halaman. 
+  └── pages            # berisi file subpages 
 ```
 
 ### Dokumentasi lebih lanjut
