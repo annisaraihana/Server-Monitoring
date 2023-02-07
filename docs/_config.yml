@@ -3,5 +3,5 @@ markdown: kramdown
 remote_theme: zendesk/jekyll-theme-zendesk-garden@main
 
 sidebar:
-  - TOC
-    {:toc}
+  - [Untuk Pengguna](https://annisaraihana.github.io/Server-Monitoring/#untuk-pengguna)
+  - [Untuk Pengembang](https://annisaraihana.github.io/Server-Monitoring/#untuk-pengembang)
