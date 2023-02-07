@@ -1,0 +1,7 @@
+markdown: kramdown
+
+remote_theme: zendesk/jekyll-theme-zendesk-garden@main
+
+sidebar:
+  - TOC
+    {:toc}
