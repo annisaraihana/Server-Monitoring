@@ -140,6 +140,7 @@ Untuk itu, file yang harus diubah adalah ketiga file ini.
 2. Dalam file EachServersMonthly_Performance.php, tidak perlu ada yang diganti. 
 
 3. Dalam file Yearly_Performance.php, lakukan hal yang sama seperti langkah 1. 
+
 ![image](https://user-images.githubusercontent.com/72925939/216922413-9887f409-15e5-4fad-a7ce-192acac5a45f.png)
 
 4. Save dan commit.
