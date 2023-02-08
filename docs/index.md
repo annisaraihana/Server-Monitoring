@@ -126,6 +126,8 @@ Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwind
 
 Jika ada penambahan server/service baru dan pengembang ingin menampilkan data log nya di website ini juga, maka berikut langkah-langkah yang perlu dilakukan.
 
+Pertama, clone atau fork repository ini. Buka di code editor pilihan anda.
+
 Tiap tombol tab di halaman utama memunculkan sub-pages tersendiri. 
 * Server Statuses -> pages\Server_Statuses.php
 * Monthly Performance -> pages\EachServersMonthly_Performance.php
@@ -145,6 +147,9 @@ Untuk itu, file yang harus diubah adalah ketiga file ini.
 
 4. Save dan commit.
 5. Karena belum ada mekanisme untuk otomatis mem-publish editan terbaru dari repository github ke server, maka Anda harus mengupload file-file terbaru secara manual, melalui FileZilla dan semacamnya.
+
+> ![warning](https://user-images.githubusercontent.com/72925939/213122914-af38c80d-afcd-44f7-82fc-0985747fd91a.svg)  
+> **Penting untuk tidak mengubah-ubah file 'env.php' yang ada di server remote. Kalau terjadi kesalahan, silahkan kontak penanggung jawab server untuk kredensial koneksi servernya dan buat env.php baru sesuai dengan format yang telah ditunjukan di README.md (halaman depan repository) dan upload kembali ke server**  
 
 
 ---
