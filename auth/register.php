@@ -61,6 +61,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $stmt->execute();
             echo '<script type="text/javascript">
 					alert("Pendaftaran berhasil, sekarang user sudah bisa login!");
+					window.location = "../pages/admin.php";
 				</script>';
         } else {
             // Ada yang salah dengan SQL statement, maka harus mengecek untuk meamstikan tabel accounts ada dan lengkap 3 fields
