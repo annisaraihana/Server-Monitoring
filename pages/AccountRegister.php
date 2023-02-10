@@ -1,3 +1,16 @@
+<?php
+include '../autoload.php';
+include '../env.php';
+session_start();
+// Jika user bukan admin maka redirect ke home page...
+if ($_SESSION['privilege_level'] != 'admin'){
+    echo 'no permission to visit this page';
+    header('Location: home.php');
+	exit;
+	}
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>

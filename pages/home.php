@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
             <div class="bg-black w-full h-[25px] mt-[3px]"> 
                 <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
-                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="https://annisaraihana.github.io/Server-Monitoring/">Dokumentasi</a>
+                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../docs/dokumentasi.html">Dokumentasi</a>
                 <?php 
                     if ($_SESSION['privilege_level'] == 'admin'){ 
                         print '<a class="font-sans font-bold hover:text-green-500 text-white float-right pr-[10px]" href="admin.php">Admin</a>'; 

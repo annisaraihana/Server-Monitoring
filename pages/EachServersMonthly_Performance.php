@@ -143,13 +143,13 @@ if (!isset($_SESSION['loggedin'])) {
             $.post("../data/GetServiceNames_data.php", function(data){
                 console.log(data);
                     
-                    for (let i in data) {
+                    for (var i in data) {
                         ServiceId.push(data[i].ServiceId);
                         ServiceName.push(data[i].ServiceName);
                         ServiceDesc.push(data[i].ServiceDesc);
                     }
 
-                    for (let i = 0; i < ServiceId.length; i++){
+                    for (var i = 0; i < ServiceId.length; i++){
                         $('#ServersSelect').append($('<option value='+ServiceId[i]+'>'+ServiceDesc[i]+'</option>'));
                     }
             });
