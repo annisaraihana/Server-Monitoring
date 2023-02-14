@@ -1,5 +1,5 @@
 <?php include '../autoload.php';
-include '../env.php';
+include '../../env.php';
 
 session_start();
 // Jika user belum login maka redirect ke login page...

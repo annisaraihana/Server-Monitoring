@@ -1,6 +1,6 @@
 <?php
 
-include '../env.php';
+include '../../env.php';
 include '../autoload.php';
 
 header('Content-Type: application/json');

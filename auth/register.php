@@ -1,5 +1,5 @@
 <?php
-include '../env.php';
+include '../../env.php';
 include '../autoload.php';
 // Mencoba connect ke database
 $con = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'),env('DB_NAME'));

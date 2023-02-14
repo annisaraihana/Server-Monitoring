@@ -1,6 +1,6 @@
 <?php
 
-include '../env.php';
+include '../../env.php';
 include '../autoload.php';
 
 session_start();
