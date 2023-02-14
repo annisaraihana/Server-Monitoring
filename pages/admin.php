@@ -25,6 +25,7 @@ if ($_SESSION['privilege_level'] != 'admin'){
         <script type="text/javascript" src="../js/Chart.min.js"></script>
         <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
         <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
     </head>
     
     <body>
@@ -39,7 +40,6 @@ if ($_SESSION['privilege_level'] != 'admin'){
             <tr>
               <th>id</th>
               <th>Username</th>
-              <th>Password</th>
               <th>Email</th>
               <th>User role</th>
             </tr>
@@ -48,6 +48,24 @@ if ($_SESSION['privilege_level'] != 'admin'){
         </table>
 
 		<a href="AccountRegister.php"> Add users </a>
+
+		<!--Edit user form-->
+		<div id = "EditForm" class="container rounded-lg bg-white w-[600px] m-auto mt-[100px]">
+			<form action="INSERT FUNCTION HERE" method="post" autocomplete="off">
+
+						<label class="font-bold text-green-900" for="Username">
+							<p class="mx-auto pt-[20px]"> Username </p>
+						</label>
+						<input class="w-full h-[50px] border rounded-lg mx-auto mb-[20px] pr-[15px] pl-[15px]" type="text" name="username" placeholder="Username" id="username" required>
+
+						<label class="font-bold text-green-900" for="email">
+							<p class="mx-auto"> Email </p>
+						</label>
+						<input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="email" name="email" placeholder="Email" id="email" required>
+
+						<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" value="Save">
+				</form>
+		</div>
 
 		<script>
 
@@ -64,14 +82,12 @@ if ($_SESSION['privilege_level'] != 'admin'){
 					console.log(data);
 					var id = [];
 					var username = [];
-					var password = [];
 					var email = [];
 					var userRole = [];
 
 					for(var i in data){
 						id.push(data[i].id);
 						username.push(data[i].username);
-						password.push(data[i].password);
 						email.push(data[i].email);
 						userRole.push(data[i].user_role);
 
@@ -81,14 +97,15 @@ if ($_SESSION['privilege_level'] != 'admin'){
                         var tr = '<tr>';
 						tr += '<td>' + id[i] + '</td>';
 						tr += '<td>' + username[i] + '</td>';
-						tr += '<td>' + password[i] + '</td>';
 						tr += '<td>' + email[i] + '</td>';
 						tr += '<td>' + userRole[i] + '</td>';
+						tr += '<td> <a href="AccountEdit.php?id=' + id[i] + '"> [edit] </a> </td>';
+						tr += '<td> <a href="../crud/delete_user.php?id=' + id[i] + ' " onClick=\"return confirm(\'Anda yakin ingin menghapus user ini?\');\"> [delete] </a> </td>';
+						tr += '<td> <button id="' + id[i] + '"> [reset password] </button> </td>';
 						tr += '</tr>';
 						$("#UserList").append(tr);
 					
                     }
-
 					
 				});
 
