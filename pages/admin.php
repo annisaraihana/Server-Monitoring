@@ -41,23 +41,24 @@ if ($_SESSION['privilege_level'] != 'admin'){
                 <a class="font-sans text-white float-right pr-[10px]">Halo, user <?=$_SESSION['name']?>.</a>
             </div>
         </header>
+		<div class = "mt-[35px] mb-[10px]">
+			<h1 class = "text-center font-bold text-xl">User Profiles</h1>
+		</div>
 
-		<h1>User profiles</h1>
-
-		<table class = "table-auto">
+		<table class = "table-auto w-full h-[15px] border-collapse border border-gray">
           <thead>
             <tr>
-              <th>id</th>
-              <th>Username</th>
-              <th>Email</th>
-              <th>User role</th>
+              <th class = "py-[7px] border border-gray">id</th>
+              <th class = "py-[7px] border border-gray">Username</th>
+              <th class = "py-[7px] border border-gray">Email</th>
+              <th class = "py-[7px] border border-gray">User role</th>
             </tr>
           </thead>
           <tbody id="UserList"></tbody>
         </table>
-
-		<a href="AccountRegister.php"> Add users </a>
-
+		<div class = "mt-[10px] ml-[5px]">
+			<a class="text-white bg-green-700 hover:bg-black py-2 px-4 rounded mt-[5px]" href="AccountRegister.php"> Add users </a>
+		</div>
 		<script>
 
 		$(document).ready(function (){
@@ -86,13 +87,13 @@ if ($_SESSION['privilege_level'] != 'admin'){
 					
 					for (var i = 0; i < id.length; i++){
                         var tr = '<tr>';
-						tr += '<td>' + id[i] + '</td>';
-						tr += '<td>' + username[i] + '</td>';
-						tr += '<td>' + email[i] + '</td>';
-						tr += '<td>' + userRole[i] + '</td>';
-						tr += '<td> <a href="AccountEdit.php?id=' + id[i] + '"> [edit] </a> </td>';
-						tr += '<td> <a href="../crud/delete_user.php?id=' + id[i] + ' " onClick=\"return confirm(\'Anda yakin ingin menghapus user ini?\');\"> [delete] </a> </td>';
-						tr += '<td> <a href="AccountPassreset.php?id=' + id[i] + '"> [reset password] </a> </td>';
+						tr += '<td class = "border border-gray text-center">' + id[i] + '</td>';
+						tr += '<td class = "border border-gray text-center">' + username[i] + '</td>';
+						tr += '<td class = "border border-gray text-center">' + email[i] + '</td>';
+						tr += '<td class = "border border-gray text-center">' + userRole[i] + '</td>';
+						tr += '<td class = "py-[7px] border border-gray text-center"> <a class="text-white bg-green-700 hover:bg-black py-1 px-2 rounded" href="AccountEdit.php?id=' + id[i] + '"> edit </a> </td>';
+						tr += '<td class = "py-[7px] border border-gray text-center"> <a class="text-white bg-red-700 hover:bg-black py-1 px-2 rounded" href="../crud/delete_user.php?id=' + id[i] + ' " onClick=\"return confirm(\'Anda yakin ingin menghapus user ini?\');\"> delete </a> </td>';
+						tr += '<td class = "py-[7px] border border-gray text-center"> <a class="text-white bg-red-700 hover:bg-black py-1 px-2 rounded" href="AccountPassreset.php?id=' + id[i] + '"> reset password </a> </td>';
 						tr += '</tr>';
 						$("#UserList").append(tr);
 					
