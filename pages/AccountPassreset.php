@@ -34,11 +34,6 @@ if ($stmt = $conn->prepare('SELECT * FROM accounts WHERE id = ?')) {
 	// Simpan result sehingga kita dapat mengecek apakah akun terdapat di database
 	if ($result->num_rows > 0) {
         //akun ada
-        while($row = $result->fetch_assoc())
-            {
-                $username = $row['username'];
-	            $email = $row['email'];
-            }
             
         } else {
 			echo '<script type="text/javascript">
@@ -71,19 +66,15 @@ $conn->close();
     </head>
 	<body>
 		<div id = "EditForm" class="container rounded-lg bg-white w-[600px] m-auto mt-[100px]">
-				<form action="../crud/edit_user.php" method="post" autocomplete="off">
+				<form action="../crud/reset_user.php" method="post" autocomplete="off">
 
 							<label class="font-bold text-green-900" for="Username">
-								<p class="mx-auto pt-[20px]"> Username </p>
+								<p class="mx-auto pt-[20px]"> New password </p>
 							</label>
-							<input class="w-full h-[50px] border rounded-lg mx-auto mb-[20px] pr-[15px] pl-[15px]" type="text" name="username" value="<?php echo $username;?>" id="username" required>
+							<input class="w-full h-[50px] border rounded-lg mx-auto mb-[20px] pr-[15px] pl-[15px]" type="password" name="password" id="password" required>
 
-							<label class="font-bold text-green-900" for="email">
-								<p class="mx-auto"> Email </p>
-							</label>
-							<input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="email" name="email" value="<?php echo $email;?>" id="email" required>
 							<input type="hidden" name="id" value=<?php echo $id;?>>
-							<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" name="update" value="update">
+							<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" name="reset" value="reset">
 				</form>
 		</div>
 

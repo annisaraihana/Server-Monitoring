@@ -1,7 +1,10 @@
 <?php include '../autoload.php';
 include '../env.php';
 
+include '../auth\checkuserexist.php';
+
 session_start();
+checkexistuser();
 // Jika user belum login maka redirect ke login page...
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../index.html');

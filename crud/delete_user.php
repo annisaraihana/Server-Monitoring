@@ -25,13 +25,27 @@ if ($conn->connect_error) {
 $id = $_GET['id'];
 
 // Cek apakah akun dengan id tersebut ada
-if ($stmt = $conn->prepare('SELECT * FROM accounts WHERE id = ?')) {
+if ($stmt = $conn->prepare('SELECT  username, password, user_role FROM accounts WHERE id = ?')) {
     $stmt->bind_param('i', $id);
 	$stmt->execute();
 	$stmt->store_result();
 	// Simpan result sehingga kita dapat mengecek apakah akun terdapat di database
 	if ($stmt->num_rows > 0) {
         //akun ada
+	    $stmt->bind_result($username, $password, $user_role);
+        $stmt->fetch();
+
+        //kalau akun admin jangan hapus
+        if ($user_role == 'admin'){
+            echo '<script type="text/javascript">
+				alert("Akun ini tidak boleh dihapus!");
+				window.location = "../pages/AccountRegister.php";
+			</script>';
+        	exit;
+
+        }
+
+        
         //deleting the row from table
         if ($stmt = $conn->prepare('DELETE FROM accounts WHERE id = ?')) {
             $stmt->bind_param("i", $id);
@@ -51,6 +65,8 @@ if ($stmt = $conn->prepare('SELECT * FROM accounts WHERE id = ?')) {
 				alert("Akun tidak ada.");
 				window.location = "../pages/admin.php";
 			</script>';
+    	exit;
+
     }
 
 	$stmt->close();

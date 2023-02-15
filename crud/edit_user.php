@@ -29,16 +29,30 @@ if(isset($_POST['update']))
       $email = mysqli_real_escape_string($conn, $_POST['email']);	
       
       // checking empty fields
-      if(empty($username) || empty($email)) {	
-              
-          if(empty($name)) {
-              echo "Username masih kosong.";
-          }
-          
-          if(empty($email)) {
-              echo "Email masih kosong.";
-          }		
-      } else {	
+      if (!isset($_POST['username'], $_POST['email'])) {
+        // Tidak dapat memperoleh data yang seharusnya terkirim
+        exit('Please complete the registration form!');
+        }
+        // Pastikan registration values yang dikirimkan tidak kosong
+        if (empty($_POST['username']) || empty($_POST['email'])) {
+            // Satu atau lebih values kosong
+            exit('Please complete the registration form');
+        }
+        
+        if (preg_match('/^[a-zA-Z0-9]+$/', $_POST['username']) == 0) {
+            exit('<script type="text/javascript">
+                    alert("Username tidak valid!");
+                    window.location = "../pages/admin.php";
+                    </script>');
+        }
+        
+        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+            exit('<script type="text/javascript">
+                    alert("Email tidak valid!");
+                    window.location = "../pages/admin.php";
+                    </script>"');
+        }
+
           //updating table
           if ($stmt = $conn->prepare('UPDATE accounts SET username = ? , email= ? WHERE id = ?')) {
                 $stmt->bind_param("ssi", $username, $email, $id);
@@ -53,11 +67,10 @@ if(isset($_POST['update']))
             // Ada yang salah dengan SQL statement, maka harus mengecek untuk meamstikan tabel accounts ada dan lengkap 3 fields
             echo 'Could not prepare statement!';
             }
-      }
-  } else {
+} else {
     echo "Tidak ada input yang diberikan.";
     header('Location: ../pages\admin.php');
 	exit;
-  }
+}
 
 ?>

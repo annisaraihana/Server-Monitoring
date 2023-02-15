@@ -1,7 +1,10 @@
 <?php include '../autoload.php';
 include '../env.php';
 
+include '../auth\checkuserexist.php';
+
 session_start();
+checkexistuser();
 // Jika user belum login maka redirect ke login page...
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../index.html');
@@ -31,6 +34,12 @@ if ($_SESSION['privilege_level'] != 'admin'){
     <body>
 		<header class="w-full h-20" style="border-top: black 5px solid; border-bottom: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
+			<div class="bg-black w-full h-[25px] mt-[3px]"> 
+                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
+                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../docs/dokumentasi.html">Dokumentasi</a>
+                <a class="font-sans font-bold hover:text-green-500 text-white float-right pr-[10px]" href="home.php">Home</a>
+                <a class="font-sans text-white float-right pr-[10px]">Halo, user <?=$_SESSION['name']?>.</a>
+            </div>
         </header>
 
 		<h1>User profiles</h1>
@@ -48,24 +57,6 @@ if ($_SESSION['privilege_level'] != 'admin'){
         </table>
 
 		<a href="AccountRegister.php"> Add users </a>
-
-		<!--Edit user form-->
-		<div id = "EditForm" class="container rounded-lg bg-white w-[600px] m-auto mt-[100px]">
-			<form action="INSERT FUNCTION HERE" method="post" autocomplete="off">
-
-						<label class="font-bold text-green-900" for="Username">
-							<p class="mx-auto pt-[20px]"> Username </p>
-						</label>
-						<input class="w-full h-[50px] border rounded-lg mx-auto mb-[20px] pr-[15px] pl-[15px]" type="text" name="username" placeholder="Username" id="username" required>
-
-						<label class="font-bold text-green-900" for="email">
-							<p class="mx-auto"> Email </p>
-						</label>
-						<input class="w-full h-[50px] border rounded-lg mb-[20px] pr-[15px] pl-[15px]" type="email" name="email" placeholder="Email" id="email" required>
-
-						<input class="w-full p-[15px] bg-green-700 rounded-lg text-white" type="submit" value="Save">
-				</form>
-		</div>
 
 		<script>
 
@@ -101,7 +92,7 @@ if ($_SESSION['privilege_level'] != 'admin'){
 						tr += '<td>' + userRole[i] + '</td>';
 						tr += '<td> <a href="AccountEdit.php?id=' + id[i] + '"> [edit] </a> </td>';
 						tr += '<td> <a href="../crud/delete_user.php?id=' + id[i] + ' " onClick=\"return confirm(\'Anda yakin ingin menghapus user ini?\');\"> [delete] </a> </td>';
-						tr += '<td> <button id="' + id[i] + '"> [reset password] </button> </td>';
+						tr += '<td> <a href="AccountPassreset.php?id=' + id[i] + '"> [reset password] </a> </td>';
 						tr += '</tr>';
 						$("#UserList").append(tr);
 					
