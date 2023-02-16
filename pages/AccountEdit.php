@@ -2,7 +2,7 @@
 
 include '../env.php';
 include '../autoload.php';
-include '../auth\checkuserexist.php';
+include '../auth/checkuserexist.php';
 
 session_start();
 checkexistuser();

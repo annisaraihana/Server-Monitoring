@@ -1,5 +1,4 @@
 # enable basic rewriting
-Options +FollowSymLinks
 RewriteEngine on
 
 # Deny access to .htaccess
@@ -22,3 +21,4 @@ deny from all
 order allow,deny
 deny from all
 </Files>
+

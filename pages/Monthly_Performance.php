@@ -1,7 +1,7 @@
 <?php include '../autoload.php';
 include '../env.php';
 
-include '../auth\checkuserexist.php';
+include '../auth/checkuserexist.php';
 
 session_start();
 checkexistuser();
