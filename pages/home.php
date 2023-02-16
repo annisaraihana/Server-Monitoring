@@ -1,7 +1,9 @@
 <?php include '../autoload.php';
 include '../env.php';
+include '../auth\checkuserexist.php';
 
 session_start();
+checkexistuser();
 // Jika user belum login maka redirect ke login page...
 if (!isset($_SESSION['loggedin'])) {
 	header('Location: ../index.html');
@@ -19,6 +21,7 @@ if (!isset($_SESSION['loggedin'])) {
         <script type="text/javascript" src="../js/Chart.min.js"></script>
         <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
         <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -29,7 +32,14 @@ if (!isset($_SESSION['loggedin'])) {
         <header class="w-full h-20" style="border-top: black 5px solid; background-color:#88B04B; background-image: url(../images/bg_header_2017.png), url(../images/bg_header_2017_right.png); background-position: left bottom, right bottom; background-repeat: no-repeat;">
             <p class="font-sans text-2xl text-center font-bold py-5">SERVER MONITORING </p>
             <div class="bg-black w-full h-[25px] mt-[3px]"> 
-                <a class="font-sans font-bold text-white float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
+                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../auth/logout.php" onclick="return confirm('Anda yakin ingin log out?');">Logout</a>
+                <a class="font-sans font-bold text-white hover:text-green-500 float-right pr-[10px]" href="../docs/dokumentasi.html">Dokumentasi</a>
+                <?php 
+                    if ($_SESSION['privilege_level'] == 'admin'){ 
+                        print '<a class="font-sans font-bold hover:text-green-500 text-white float-right pr-[10px]" href="admin.php">Admin</a>'; 
+                    } 
+                ?>
+                <a class="font-sans text-white float-right pr-[10px]">Halo, user <?=$_SESSION['name']?>.</a>
             </div>
         </header>
 
@@ -87,7 +97,7 @@ if (!isset($_SESSION['loggedin'])) {
         //script untuk membuat tombol sub-pages jadi hitam saat aktif
         $("#options button").click(function(e) { 
                 var isActive = $(this).hasClass('bg-black');
-                $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
+                $('#options button').removeClass('bg-black').addClass('bg-green-700');
                 if (!isActive) {
                     $(this).removeClass('bg-green-700').addClass('bg-black');
                 }

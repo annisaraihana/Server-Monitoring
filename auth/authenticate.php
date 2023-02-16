@@ -18,14 +18,14 @@ if ( !isset($_POST['username'], $_POST['password']) ) {
 }
 
 // Siapkan SQL, menyiapkan SQL statement akan mencegah adanya SQL injection
-if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?')) {
+if ($stmt = $con->prepare('SELECT id, password, user_role FROM accounts WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), username berupa string maka gunakan "s"
 	$stmt->bind_param('s', $_POST['username']);
 	$stmt->execute();
 	// Simpan result sehingga kita dapat mengecek apakah akun terdapat di database
 	$stmt->store_result();
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $password);
+        $stmt->bind_result($id, $password, $user_role);
         $stmt->fetch();
         // Akun sudah ada, lanjutkan dengan verifikasi password
         // Note: ingat untuk menggunakan password_hash pada registration file untuk menyimpan hashed passwords
@@ -36,6 +36,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
+            $_SESSION['privilege_level'] = $user_role;
             header('Location: ../pages/home.php');
         } else {
             // Password salah
