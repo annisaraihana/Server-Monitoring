@@ -21,6 +21,7 @@ if (!isset($_SESSION['loggedin'])) {
         <script type="text/javascript" src="../js/Chart.min.js"></script>
         <script type="text/javascript" src="../js/chartjs-plugin-doughnutlabel.min.js"></script>
         <link href="../css/output.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
         
 
     </head>
@@ -96,7 +97,7 @@ if (!isset($_SESSION['loggedin'])) {
         //script untuk membuat tombol sub-pages jadi hitam saat aktif
         $("#options button").click(function(e) { 
                 var isActive = $(this).hasClass('bg-black');
-                $('.bg-black').removeClass('bg-black').addClass('bg-green-700');
+                $('#options button').removeClass('bg-black').addClass('bg-green-700');
                 if (!isActive) {
                     $(this).removeClass('bg-green-700').addClass('bg-black');
                 }

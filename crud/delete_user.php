@@ -39,7 +39,7 @@ if ($stmt = $conn->prepare('SELECT  username, password, user_role FROM accounts 
         if ($user_role == 'admin'){
             echo '<script type="text/javascript">
 				alert("Akun ini tidak boleh dihapus!");
-				window.location = "../pages/AccountRegister.php";
+				window.location = "../pages/admin.php";
 			</script>';
         	exit;
 
