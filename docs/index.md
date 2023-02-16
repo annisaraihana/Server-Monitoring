@@ -1,8 +1,6 @@
 # Sardjito Server Monitoring
 Selamat datang di halaman dokumentasi web app kami. Disini kami membahas semua fitur-fitur yang ada untuk pengguna dan juga penjelasan source code 
 untuk pengembangan selanjutnya.  
-  
-Untuk sementara ini, aplikasi dapat diakses melewati jaringan internal melalui link: [http://10.100.254.116/monitoring/](http://10.100.254.116/monitoring/ ) 
 
 ## Daftar isi
 * TOC  
@@ -52,7 +50,7 @@ Tanggal yang menunjuk hari di masa depan hanya akan memuat grafik yang kosong.
 
 Tombol "Monthly Performance" dan "Yearly performance" memiliki fungsi yang relatif sama. Halaman Yearly Performance menunjukkan persentase keaktifan tiap server yang ditinjau selama setahun. Sedangkan halaman Monthly Performance menunjukkan persentase keaktifan sebuah server tertentu tiap bulannya.  
   
-Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, dengan kata lain, seberapa sering sebuah server tersebut memiliki status aktif.  
+Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam dibandingkan dengan total jumlah semua rekaman, dengan kata lain, seberapa sering sebuah server tersebut memiliki status aktif dalam semua rekaman log nya.
   
 **Jika ingin melihat performa suatu server dalam setahun,** pergi ke halaman Yearly Performance dan pilih "Performa Tahun ini" atau "Performa Tahun lalu", lalu temukan nama server yang Anda inginkan.
 
@@ -66,11 +64,25 @@ Persentase yang ditunjukkan adalah banyaknya jumlah status "1" yang terekam, den
 
 ---
 
+### Melihat berapa total durasi waktu server mengalami down
+
+Tergantung jika Anda melihat data Monthly atau Yearly, anda dapat melihat total durasi waktu down dengan melihat berapa jumlah status 'inactive' sebuah server.
+
+klik kotak hijau berlabel 'active' di atas grafik. Label data yang di klik akan tereliminasi dari grafik tersebut. Dekatkan kursor ke grafik sehingga dapat terlihat lebih jelas berapa jumlah status 'inactive' yang direkam dari server. 
+
+![image](https://user-images.githubusercontent.com/72925939/217984558-07fee9ae-3eb1-4710-84cc-65bf1c559df3.png)
+
+Setelah ditelusuri, database menyimpan tiap log status server dengan jeda kurang lebih 6 menit. Maka, dapat diperkirakan total durasi waktu server diatas mengalami down pada tahun 2022 adalah **maksimal** 13 x 6 menit, yaitu 78 menit atau 1.3 jam. 
+
+---
+
 ### Menyimpan grafik sebagai gambar
 
 Setiap grafik yang tampil dapat langsung disimpan sebagai gambar .png dengan mengklik-kanan grafik tersebut dan menekan "Save image as..."
 
 ![save-as](https://user-images.githubusercontent.com/72925939/213106137-28b1d14a-757d-4759-bafc-a22a1fface6f.jpg)
+
+---
 
 
 ---
@@ -122,9 +134,36 @@ Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwind
 
 ---
 
-### Jika ada penambahan service baru
+### Struktur kode
 
-Jika ada penambahan server/service baru dan pengembang ingin menampilkan data log nya di website ini juga, maka berikut langkah-langkah yang perlu dilakukan.
+Konten di tiap halaman web app ini biasanya dikontrol langsung oleh beberapa fungsi javascript dan php. Berikut hubungan antara tiap halaman dan file js dan php nya masing-masing:
+
+|Folder  | pages/      | js/          | data/     |
+|------  | ---      |---        |---        |
+|Files    | home.php      | DisplayActiveServersChart.js       | ActiveServers_data.php   |
+|       | Server_Statuses.php   | DisplayStatusChart.js        | GetServiceNames_data.php, ServerStatuses_data.php|
+|      | EachServersMonthly_Performance.php. | DisplayEachServersAllMonth.js        | GetServiceNames_data.php, ServerPercentageAllMonth_data.php|
+|      | Yearly_Performance.php | DisplayPercentagesYear.js        | GetServiceNames_data.php, ServerPercentageYearly_data.php, ServerPercentagePrevYear_data.php |
+| (deprecated) | Monthly_Performance.php | DisplayPercentagesMonth.js | GetServiceNames_data.php, ServerPercentage_data.php|
+
+
+Untuk fungsi login dan autentikasi, berikut file-filenya yang bersangkutan:
+
+|Folder| root | pages/ | auth/
+|--|--|--|--|
+|Files| index.html | | authenticate.php|
+| | | AccountRegister.php | register.php |
+| | home.php | | logout.php |
+
+
+
+---
+
+### Kasus-kasus
+
+#### Jika ada penambahan service baru
+
+Jika ada penambahan server/service baru dan datanya tidak muncul di dalam halaman page, maka berikut langkah-langkah yang perlu dilakukan.
 
 Pertama, clone atau fork repository ini. Buka di code editor pilihan anda.
 
@@ -149,11 +188,31 @@ Untuk itu, file yang harus diubah adalah ketiga file ini.
 5. Karena belum ada mekanisme untuk otomatis mem-publish editan terbaru dari repository github ke server, maka Anda harus mengupload file-file terbaru secara manual, melalui FileZilla dan semacamnya.
 
 > ![warning](https://user-images.githubusercontent.com/72925939/213122914-af38c80d-afcd-44f7-82fc-0985747fd91a.svg)  
-> **Penting untuk tidak mengubah-ubah file 'env.php' yang ada di server remote. Kalau terjadi kesalahan, silahkan kontak penanggung jawab server untuk kredensial koneksi servernya dan buat env.php baru sesuai dengan format yang telah ditunjukan di README.md (halaman depan repository) dan upload kembali ke server**  
+> **Penting untuk tidak mengubah-ubah file 'env.php' yang ada di server remote. Kalau terjadi kesalahan, silahkan kontak penanggung jawab server untuk kredensial koneksi servernya dan buat 'env.php' baru sesuai dengan format yang telah ditentukan dan upload kembali ke server.**  
 
+#### Jika password database diganti
+
+Jika password maupun konfigurasi database lainnya diganti, maka web app tidak akan berfungsi lagi. Anda harus mengakses sourcecode server dan mengedit file 'env.php' di root folder dengan konfigurasi baru.
+
+Format env.php yang kami gunakan adalah sebagai berikut:
+
+```php
+  <?php
+  $variables = [
+      'DB_HOST' => 'Isi alamat host',
+      'DB_USERNAME' => 'isi dengan username',
+      'DB_PASSWORD' => 'isi dengan password',
+      'DB_NAME' => 'isi nama database',
+      'DB_PORT' => 'isi port database',
+  ];
+
+  foreach ($variables as $key => $value) {
+      putenv("$key=$value");
+  }
+  ```
+Variable di dalam file ini akan diproses oleh 'autoload.php' tiap melakukan sebuah koneksi ke database.
 
 ---
 
-Under construction.
-
+Aplikasi web dan dokumentasi ini pertama ditulis oleh Btari Fatma dan Annisa Raihana. Semoga keseluruhannya dapat membantu. Jika masih ada pertanyaan, silahkan [buka issue baru](https://github.com/annisaraihana/Server-Monitoring/issues) di repository kami atau kontak salah satu dari kami.
 
