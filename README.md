@@ -47,6 +47,7 @@ Ini adalah proyek php murni tanpa menggunakan framework. Berikut cara meng-setup
 ```
 - root                 # berisi index.html, file env.php, dan utilitas lainnya
   └── auth             # berisi script php yang mengatur login dan authorization
+  └── crud             # berisi file-file fungsi php yang menjalankan CRUD admin
   └── css              # berisi file-file .css
   └── data             # berisi script php berupa controllers yang mengambil data dari database.
   └── docs             # berisi file dokumentasi projek.
