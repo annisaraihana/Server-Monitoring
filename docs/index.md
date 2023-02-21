@@ -140,21 +140,28 @@ Konten di tiap halaman web app ini biasanya dikontrol langsung oleh beberapa fun
 
 |Folder  | pages/      | js/          | data/     |
 |------  | ---      |---        |---        |
-|Files    | home.php      | DisplayActiveServersChart.js       | ActiveServers_data.php   |
+|        | home.php      | DisplayActiveServersChart.js       | ActiveServers_data.php   |
 |       | Server_Statuses.php   | DisplayStatusChart.js        | GetServiceNames_data.php, ServerStatuses_data.php|
 |      | EachServersMonthly_Performance.php. | DisplayEachServersAllMonth.js        | GetServiceNames_data.php, ServerPercentageAllMonth_data.php|
 |      | Yearly_Performance.php | DisplayPercentagesYear.js        | GetServiceNames_data.php, ServerPercentageYearly_data.php, ServerPercentagePrevYear_data.php |
 | (deprecated) | Monthly_Performance.php | DisplayPercentagesMonth.js | GetServiceNames_data.php, ServerPercentage_data.php|
 
 
-Untuk fungsi login dan autentikasi, berikut file-filenya yang bersangkutan:
+Untuk fungsi login dan autentikasi, berikut file-filenya yang berhubungan dengan satu sama lain:
 
 |Folder| root | pages/ | auth/
 |--|--|--|--|
-|Files| index.html | | authenticate.php|
+| | index.html | | authenticate.php|
 | | | AccountRegister.php | register.php |
-| | home.php | | logout.php |
+| | top menu bar | | logout.php |
 
+Untuk fungsi-fungsi yang tersedia untuk pengguna admin, berikut file-filenya yang berhubungan dengan satu sama lain:
+
+|Folder| pages/ | auth/ | crud/
+| --   |--      |--     |--   |
+| | admin.php | GetAccountsList_data.php, AccountEdit.php, AccountPassreset.php | delete_user.php |
+|  | AccountEdit.php |    | edit_user.php |
+|  | AccountPassreset.php |    | reset_user.php |
 
 
 ---
