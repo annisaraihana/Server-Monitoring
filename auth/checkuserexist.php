@@ -1,7 +1,8 @@
 <?php
 
 function checkexistuser(){
-
+// fungsi untuk mengecek apakah user masih ada di database atau tidak
+// supaya jika user di hapus, session loginnya dia juga ikut terhapus semua, jadi otomatis ter logout
 $conn = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'),env('DB_NAME'));
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
