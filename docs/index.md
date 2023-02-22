@@ -136,6 +136,19 @@ Untuk dokumentasi penggunaan tailwind, dapat dilihat [di sini.](https://tailwind
 
 ### Struktur kode
 
+
+```
+- root                 # berisi index.html (login page), file env.php, dan utilitas lainnya
+  └── auth             # berisi script php yang mengatur proses login, register, logout, dan semacamnya
+  └── crud             # berisi script php yang menjalankan fungsi CRUD admin
+  └── css              # berisi file-file .css
+  └── data             # berisi script php yang meng-query data dari database.
+  └── docs             # berisi file dokumentasi projek, dalam format markdown dan html.
+  └── images           # berisi file gambar yang digunakan di antarmuka.
+  └── js               # berisi libraries dan script .js yang menampilkan data di halaman. 
+  └── pages            # berisi file halaman2 yang ditampilkan di website
+```
+
 Konten di tiap halaman web app ini biasanya dikontrol langsung oleh beberapa fungsi javascript dan php. Berikut hubungan antara tiap halaman dan file js dan php nya masing-masing:
 
 |Folder  | pages/      | js/          | data/     |
@@ -151,17 +164,20 @@ Untuk fungsi login dan autentikasi, berikut file-filenya yang berhubungan dengan
 
 |Folder| root | pages/ | auth/
 |--|--|--|--|
-| | index.html | | authenticate.php|
-| | | AccountRegister.php | register.php |
+| | index.html (login page) | | authenticate.php|
+| | | AccountRegister.php (admin only) | register.php |
 | | top menu bar | | logout.php |
+| |              | | checkuserexist.php |
 
-Untuk fungsi-fungsi yang tersedia untuk pengguna admin, berikut file-filenya yang berhubungan dengan satu sama lain:
+Untuk fungsi-fungsi yang khusus tersedia untuk pengguna admin dari halaman admin, berikut file-filenya yang berhubungan dengan satu sama lain:
 
 |Folder| pages/ | auth/ | crud/
 | --   |--      |--     |--   |
-| | admin.php | GetAccountsList_data.php, AccountEdit.php, AccountPassreset.php | delete_user.php |
+| | admin.php | GetAccountsList_data.php |  |
 |  | AccountEdit.php |    | edit_user.php |
 |  | AccountPassreset.php |    | reset_user.php |
+| | AccountRegister.php |register.php |  | |
+| | | | delete_user.php |
 
 
 ---
