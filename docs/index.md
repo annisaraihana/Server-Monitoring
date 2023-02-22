@@ -235,6 +235,15 @@ Format env.php yang kami gunakan adalah sebagai berikut:
   ```
 Variable di dalam file ini akan diproses oleh 'autoload.php' tiap melakukan sebuah koneksi ke database.
 
+#### Internal server error (500)
+Jika webpage mengalami Internal server error, kemungkinan besar ada kesalahan dalam source code. Browser tidak akan menampilkan error php dari server secara default. Maka dari itu, untuk troubleshooting, Anda perlu mencari baris errornya sendiri dari dalam log yang terekam oleh server. 
+
+1. Masuklah ke directory server melalui ssh dengan kredensial yang Anda miliki dan navigasi ke /var/log/php-fpm/
+
+![image](https://user-images.githubusercontent.com/72925939/220545146-b1678f23-64b8-44f8-bae0-4b1b97f13e16.png)
+
+2. Buka file `www-error.log` dengan command `cat` atau `tail` untuk melihat baris-baris error terbaru. Anda harus memiliki permission superuser untuk dapat melihat file ini.
+
 ---
 
 Aplikasi web dan dokumentasi ini pertama ditulis oleh Btari Fatma dan Annisa Raihana. Semoga keseluruhannya dapat membantu. Jika masih ada pertanyaan, silahkan [buka issue baru](https://github.com/annisaraihana/Server-Monitoring/issues) di repository kami atau kontak salah satu dari kami.
